@@ -1,0 +1,29 @@
+@font-face {
+  font-family: HelveticaNowDisplay;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../../fonts/HelveticaNowDisplay.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HelveticaNowDisplay;
+  src: url(/fonts/HelveticaNowDisplayMedium.woff) format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HelveticaNowDisplay;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../../fonts/HelveticaNowDisplayBold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HelveticaNowDisplay;
+  src: url("../../fonts/HelveticaNowDisplayBlack.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+}

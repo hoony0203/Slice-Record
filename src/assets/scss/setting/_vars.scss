@@ -1,0 +1,27 @@
+:root {
+  --mainfont-HelveticaNowDisplay: "HelveticaNowDisplay";
+  // --mainfont-nexon: "nexonLv1";
+
+  // 폰트 셋팅
+  font-family: var(--mainfont-HelveticaNowDisplay);
+  // , var(--mainfont-nexon);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  // 폰트 최적화
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  font-kerning: none;
+
+  --cl-main-bg: #e7ddcf; //light grayish-orange
+
+  @media (max-width: 800px) {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
