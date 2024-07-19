@@ -88,7 +88,6 @@ img {
 // 디자인 초기화
 input,
 textarea,
-button,
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -96,6 +95,14 @@ select {
   border-radius: 0;
   font-size: 16px;
   border: 0;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  border: none;
 }
 
 // 스킵메뉴

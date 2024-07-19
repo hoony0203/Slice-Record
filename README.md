@@ -16,4 +16,4 @@
 
 ## 프로젝트 실행
 
-- pnpm install react-router-dom axios react-player react-helmet-async lenis @gsap/react
+- pnpm install react-router-dom axios react-player react-helmet-async lenis @gsap/react react-query zustand

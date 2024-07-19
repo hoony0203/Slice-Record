@@ -9,3 +9,159 @@
 
 //section
 @import "section/layout";
+
+.section {
+}
+
+.gap-record {
+}
+
+.slice-record-main {
+  grid-column: 1 / 8;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: 0 50px;
+}
+
+.grid {
+  display: grid;
+  column-gap: 5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.txt-up {
+  text-transform: uppercase;
+}
+
+.txt-black {
+  font-family: HelveticaNowDisplay;
+  font-weight: 900;
+}
+
+.title {
+  grid-column: 1/3;
+  font-size: 9.625vh;
+  max-width: 100vh;
+  margin-bottom: 6rem;
+  padding-top: 5rem;
+  line-height: 1em;
+}
+
+.turntable {
+  grid-column: 3/10;
+  //   border: 5px solid black;
+  width: 100%;
+  height: 600px;
+  background: url(../img/turntable.png) no-repeat center / contain;
+}
+
+.menu {
+  grid-column: 1 / 4;
+  font-size: 3.625vh;
+  max-width: 90vh;
+  margin-bottom: 6rem;
+  padding-top: 5rem;
+}
+
+.turntable2 {
+  float: right;
+  position: sticky;
+  top: 25rem;
+  grid-column: 4 / 10;
+  border: 5px solid black;
+  min-width: 600px;
+  max-width: 800px;
+  height: 800px;
+}
+
+.turn2-nav {
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid black;
+  height: 7rem;
+  --nav-height: 7rem;
+}
+
+.turn2-heading {
+  margin-left: 3.2rem;
+  max-width: 13.6rem;
+  font-size: 2rem; //h6
+}
+
+.turn2-nav-control {
+  height: var(--nav-height);
+}
+
+.turn2-nav-arrow:nth-of-type(1) {
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+}
+
+.turn2-nav-arrow {
+  //   border: 5px solid blue;
+  width: 7.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  i:hover {
+    color: var(--cl-point-orange);
+  }
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 2.8rem;
+  position: relative;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--cl-point-orange);
+    .line-inner {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  height: 0.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+
+.line-inner {
+  transform: scaleX(0);
+  width: 100%;
+  height: 0.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--cl-point-orange);
+  transition: all 0.1s ease;
+}
+
+@media screen and (min-width: 1920px) {
+  .turn2-heading {
+    margin-left: unset;
+  }
+  .turn2-nav {
+    padding: 0 5rem;
+  }
+  .turn2-nav-arrow:nth-of-type(2) {
+    border-right: 5px solid black;
+  }
+}
