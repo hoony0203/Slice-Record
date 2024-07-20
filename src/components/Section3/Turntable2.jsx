@@ -1,7 +1,7 @@
 import React from "react";
-import { useMenuStore } from "../store/store";
+import { useMenuStore } from "../../store/store";
 import { useEffect } from "react";
-import Contents from "./Contents";
+import Contents from "../Contents";
 
 const Turntable2 = () => {
   const { menu, page, pages, pageName } = useMenuStore();
