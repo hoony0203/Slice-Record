@@ -8,7 +8,7 @@ const Section1 = () => {
           <h1 className="title txt-black txt-up">
             Kustom Packaging & Products For Konscious Brands
           </h1>
-          <div className="turntable"></div>
+          <div className="turntable1"></div>
         </div>
       </section>
     </>
