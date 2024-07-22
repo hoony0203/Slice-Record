@@ -1,20 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMenuStore } from "../../store/store";
+import { useState, useEffect } from "react";
 
 const Menu = () => {
+  const { menu, page, pages, pageName } = useMenuStore();
+  const { setPage } = useMenuStore((state) => state.actions);
+  let [hoverPage, sethoverPage] = useState();
+
   const navigate = useNavigate();
-  const { menu, page, pages } = useMenuStore();
+
   return (
     <div className="menu">
       <div>
         {menu.map((item, i) => {
           return (
             <div
-              onClick={() => {
-                console.log("click");
-                // navigate();
-              }}
+              onMouseEnter={() => setPage(i)}
               className="flex menu-item"
               key={i}>
               <div>

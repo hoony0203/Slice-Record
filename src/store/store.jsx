@@ -14,6 +14,10 @@ export const useMenuStore = create((set, get) => {
         let currentPage = get().page;
         console.log(currentPage);
       },
+      setPage: (i) =>
+        set({
+          page: i + 1,
+        }),
       increasePage: () =>
         set((state) => ({
           page: state.page + 1,

@@ -49,7 +49,6 @@ const Section2 = () => {
         start: "top 80%",
         end: "bottom 20%",
         scrub: true,
-        markers: true,
       },
       opacity: 1,
       ease: "slow",
