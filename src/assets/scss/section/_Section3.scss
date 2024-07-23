@@ -1,3 +1,7 @@
+.section-3 {
+  padding-bottom: 15rem;
+}
+
 .menu {
   grid-column: 1 / 4;
   font-size: 3.625vh;
@@ -53,8 +57,7 @@
   .disable {
     color: gray;
   }
-  .active:hover,
-  .active:focus {
+  .arrow-active:hover {
     color: var(--cl-point-orange);
   }
 }
@@ -84,8 +87,10 @@
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  .menu-active {
     color: var(--cl-point-orange);
+
     .line-inner {
       transform: scaleX(1);
     }
@@ -122,14 +127,56 @@
   transition: all 0.1s ease;
 }
 
-// .split-word {
-//   opacity: 0.3;
-// }
-
 .blue {
   background-color: blue;
   width: 100px;
   height: 100px;
+}
+
+.content-select-list {
+  padding: 2rem 1rem 1rem 1rem;
+  height: 43rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  justify-items: center;
+  row-gap: 3rem;
+}
+
+.thumb {
+  cursor: pointer;
+  position: relative;
+  vertical-align: center;
+  width: 10rem;
+  height: 10rem;
+  aspect-ratio: 1 / 1;
+}
+
+.thumb-overlay {
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.thumb-label {
+  height: 6rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  max-width: 10rem;
+  position: absolute;
+  top: 3.5rem;
+  left: 0.5rem;
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .label-point {
+    color: var(--cl-text-light-sub);
+  }
 }
 
 @media screen and (min-width: 1920px) {

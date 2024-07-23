@@ -9,11 +9,11 @@ export const useMenuStore = create((set, get) => {
     pageName: "product kategories",
     pages: menu.length,
     actions: {
-      getMenu: () => get().state,
-      getPage: () => {
-        let currentPage = get().page;
-        console.log(currentPage);
-      },
+      // getMenu: () => get().state,
+      // getPage: () => {
+      //   let currentPage = get().page;
+      //   console.log(currentPage);
+      // },
       setPage: (i) =>
         set({
           page: i + 1,

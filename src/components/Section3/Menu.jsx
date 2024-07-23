@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMenuStore } from "../../store/store";
-import { useState, useEffect } from "react";
+import { useArtistStore } from "../../store/artistStore";
+import { useGenreStore } from "../../store/genreStore";
+import { useEffect } from "react";
 
 const Menu = () => {
   const { menu, page, pages, pageName } = useMenuStore();
   const { setPage } = useMenuStore((state) => state.actions);
-  let [hoverPage, sethoverPage] = useState();
-
+  const { getArtistName } = useArtistStore((state) => state.actions);
+  const { getGenreName } = useGenreStore((state) => state.actions);
   const navigate = useNavigate();
 
   return (
@@ -17,10 +19,16 @@ const Menu = () => {
           return (
             <div
               onMouseEnter={() => setPage(i)}
+              onClick={i == 0 ? getGenreName : i == 1 ? getArtistName : null}
               className="flex menu-item"
               key={i}>
               <div>
-                <h3 className="txt-up txt-black">{item}</h3>
+                <h3
+                  className={
+                    `txt-up txt-black` + (page == i + 1 ? " menu-active" : "")
+                  }>
+                  {item}
+                </h3>
               </div>
               <div className="menu-num">
                 <p>0{i + 1}</p>
