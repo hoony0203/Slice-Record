@@ -3,13 +3,11 @@ import { useGenreStore } from "../store/genreStore";
 
 const GenreArtists = () => {
   const { genreArtists } = useGenreStore();
+
   return (
     <div>
-      genreArtists
       {genreArtists.map((item, i) => {
-        {
-          item.name;
-        }
+        return <div key={i}>{item.name}</div>;
       })}
     </div>
   );

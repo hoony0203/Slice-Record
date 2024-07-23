@@ -1,5 +1,6 @@
 import React from "react";
 import { useMenuStore } from "../../store/store";
+import { useGenreStore } from "../../store/genreStore";
 import { useEffect } from "react";
 import Contents from "../Contents";
 import GenreArtists from "../GenreArtists";
@@ -34,9 +35,13 @@ const Turntable2 = () => {
           </div>
         </div>
       </div>
+      {genreArtists.length == 0 ? (
+        <Contents />
+      ) : genreArtists.length > 0 ? (
+        <GenreArtists />
+      ) : null}
 
-      <Contents />
-      {<GenreArtists />}
+      {}
     </div>
   );
 };
