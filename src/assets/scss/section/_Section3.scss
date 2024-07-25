@@ -134,11 +134,11 @@
 }
 
 .content-select-list {
-  border: 5px solid blue;
+  // border: 5px solid blue;
   padding: 2rem 1rem 1rem 1rem;
   height: 43rem;
   display: grid;
-  overflow-y: auto;
+  // overflow-y: auto;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   justify-items: center;
