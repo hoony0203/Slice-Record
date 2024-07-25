@@ -1,15 +1,18 @@
-import React from "react";
-import axios from "axios";
-import { useEffect } from "react";
 import { useArtistStore } from "../../../../store/artistStore";
 
 const ArtistVideoList = () => {
-  const { artistVideoList, artistPage, artistName } = useArtistStore();
+  const { artistVideoList } = useArtistStore();
 
   return (
     <>
       {artistVideoList.map((item, i) => {
-        return <div key={i}>{item.snippet.title}</div>;
+        return (
+          <div key={i}>
+            {item.title}
+
+            <img src={item.thumbnail} alt="" width="80px" height="80px" />
+          </div>
+        );
       })}
     </>
   );

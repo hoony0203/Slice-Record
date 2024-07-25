@@ -34,11 +34,28 @@ export const useArtistStore = create((set, get) => {
           )
 
           .then((result) => {
-            console.log(result);
+            let list = result.data.items;
+
+            list = list.filter(
+              (video) => !video.snippet.description.includes("private")
+            );
+            console.log(list);
+
+            let array = new Array();
+            for (let i = 0; i < list.length; i++) {
+              let obj = {};
+              obj["title"] = list[i].snippet.title;
+              obj["videoId"] = list[i].contentDetails.videoId;
+              obj["playlistId"] = list[i].playlistId;
+              obj["thumbnail"] = list[i].snippet.thumbnails.standard.url;
+              // obj["imgUrl"] = list[i].imgUrl;
+              array.push(obj);
+            }
+
             set({
               artistPage: artistpageNum,
               playlistId: playlistId,
-              artistVideoList: result.data.items,
+              artistVideoList: array,
             });
             // console.log(result.data.items[0].snippet.title);
             // console.log(result.data.items[0].snippet.thumbnails);
