@@ -2,8 +2,8 @@ import React from "react";
 import { useMenuStore } from "../../store/store";
 import { useGenreStore } from "../../store/genreStore";
 import { useEffect } from "react";
-import Contents from "../Contents";
-import GenreArtists from "../GenreArtists";
+import Contents from "./Contents/Contents";
+import GenreArtists from "./Contents/Genre/GenreArtists";
 
 const Turntable2 = () => {
   const { menu, page, pages, pageName } = useMenuStore();
@@ -35,13 +35,8 @@ const Turntable2 = () => {
           </div>
         </div>
       </div>
-      {genreArtists.length == 0 ? (
-        <Contents />
-      ) : genreArtists.length > 0 ? (
-        <GenreArtists />
-      ) : null}
 
-      {}
+      <Contents />
     </div>
   );
 };

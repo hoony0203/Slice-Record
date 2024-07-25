@@ -1,5 +1,5 @@
 import React from "react";
-import { useGenreStore } from "../store/genreStore";
+import { useGenreStore } from "../../../../store/genreStore";
 
 const GenreArtists = () => {
   const { genreArtists } = useGenreStore();
