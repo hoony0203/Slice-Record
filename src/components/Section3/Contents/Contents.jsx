@@ -30,12 +30,10 @@ const Contents = () => {
 
   return (
     <div className="content-select-list">
-      {/* {menu[page - 1]} */}
+      {/* {genreArtists.length > 0 ? (<GenreArtists />) : null} */}
 
-      {menu[page - 1] == "artist" ? <Artist /> : null}
-
-      {genreArtists.length > 0 ? (
-        <GenreArtists />
+      {menu[page - 1] == "artist" ? (
+        <Artist />
       ) : menu[page - 1] == "genre" ? (
         <Genre />
       ) : null}

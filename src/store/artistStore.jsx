@@ -5,6 +5,7 @@ export const useArtistStore = create((set, get) => {
   return {
     artist: artistInfo,
     // defaultImg: true,
+    artistPage: 0,
     artistName: [],
     actions: {
       getArtistName: () => {
@@ -13,6 +14,7 @@ export const useArtistStore = create((set, get) => {
           let obj = {};
           obj["name"] = artistInfo[i].name;
           obj["channelId"] = artistInfo[i].channelId;
+          obj["playlistId"] = artistInfo[i].playlistId;
           obj["genre"] = artistInfo[i].genre;
           obj["imgUrl"] = artistInfo[i].imgUrl;
           array.push(obj);
@@ -20,6 +22,9 @@ export const useArtistStore = create((set, get) => {
         set({
           artistName: array,
         });
+      },
+      setArtistPage: (artistpageNum) => {
+        set({ artistPage: artistpageNum });
       },
     },
   };

@@ -3,13 +3,15 @@ import { useGenreStore } from "../../../../store/genreStore";
 
 const GenreArtists = () => {
   const { genreArtists } = useGenreStore();
+  const { resetArtistName } = useGenreStore((state) => state.actions);
 
   return (
-    <div>
+    <>
+      <button onClick={resetArtistName}>back</button>
       {genreArtists.map((item, i) => {
         return <div key={i}>{item.name}</div>;
       })}
-    </div>
+    </>
   );
 };
 

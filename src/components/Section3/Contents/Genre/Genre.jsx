@@ -2,20 +2,20 @@ import React from "react";
 import { useGenreStore } from "../../../../store/genreStore";
 
 const Genre = () => {
-  const { genreName, genreArtists } = useGenreStore();
+  const { genreName } = useGenreStore();
   const { getGenreArtistName } = useGenreStore((state) => state.actions);
   return (
     <>
-      {genreName.map((item, i) => {
+      {genreName.map((genre, i) => {
         return (
           <div
             className="thumb"
             key={i}
-            onClick={() => getGenreArtistName(item)}>
-            <label className="thumb-label">{item}</label>
+            onClick={() => getGenreArtistName(genre)}>
+            <label className="thumb-label">{genre}</label>
             <div className="thumb-overlay"></div>
             <img
-              src={`src/assets/img/genreImg/${item}.jpg`}
+              src={`src/assets/img/genreImg/${genre}.jpg`}
               alt="src/assets/img/genreImg/CityPop.jpg"
             />
           </div>

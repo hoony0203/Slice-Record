@@ -18,11 +18,14 @@ export const useGenreStore = create((set, get) => {
           genreName: [...genreSet],
         });
       },
-      getGenreArtistName: (param) => {
-        let result = artistInfo.filter((item) => item.genre == param);
+      getGenreArtistName: (genre) => {
+        let result = artistInfo.filter((artist) => artist.genre == genre);
         let array = new Array();
         array.push(...result);
         set({ genreArtists: array });
+      },
+      resetArtistName: () => {
+        set({ genreArtists: [] });
       },
     },
   };

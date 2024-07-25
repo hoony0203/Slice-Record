@@ -1,14 +1,11 @@
 import React from "react";
 import { useMenuStore } from "../../store/store";
-import { useGenreStore } from "../../store/genreStore";
 import { useEffect } from "react";
 import Contents from "./Contents/Contents";
-import GenreArtists from "./Contents/Genre/GenreArtists";
 
 const Turntable2 = () => {
   const { menu, page, pages, pageName } = useMenuStore();
   const { increasePage, decreasePage } = useMenuStore((state) => state.actions);
-  const { genreArtists } = useGenreStore();
 
   return (
     <div className="turntable2">

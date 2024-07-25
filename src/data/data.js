@@ -4,6 +4,7 @@ const artistInfo = [
     genre: "JPop",
     handle: "Ayase_YOASOBI",
     channelId: "UCvpredjG93ifbCP1Y77JyFA",
+    playlistId: "PLR48NTfP0M0Nv3uFq7ka52rndi7_KJE41",
     imgUrl:
       "https://yt3.googleusercontent.com/ytc/AIdro_nMWGqyr97pm_Gwii1PfkXIYJd4QYOiMP779zRdYQh49II=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -12,6 +13,7 @@ const artistInfo = [
     genre: "JPop",
     handle: "HoushouMarine",
     channelId: "UCCzUftO8KOVkV4wQG1vkUvg",
+    playlistId: "OLAK5uy_ku6e_FfhepWPldUoOKGGNEasOg64S9Iuo",
     imgUrl:
       "https://yt3.googleusercontent.com/Z2QpYUZ4-jKoFR7Ms330gRQzjI2gZ4CB_uVP6f39YysxUe1u8icrtE07ffpRxCtpu9U65MWNDA=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -20,6 +22,7 @@ const artistInfo = [
     genre: "JPop",
     handle: "Ado1024",
     channelId: "UCln9P4Qm3-EAY4aiEPmRwEA",
+    playlistId: "PLaxauk3chSWgwI1W0yo5Bv9GAn1O1cwKB",
     imgUrl:
       "https://yt3.googleusercontent.com/I3ckNVLPQq04aQklOnRctTEnBjf7pkppVLV7WYe4Nb4g3sge1h-2IlXAvLnRGgrMkMfL4NadPQ=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -28,6 +31,7 @@ const artistInfo = [
     genre: "Rock",
     handle: "falloutboy",
     channelId: "UC2qWxZHgnlwDvcmLqP23jrA",
+    playlistId: "PLB43607A7266FA847",
     imgUrl:
       "https://yt3.googleusercontent.com/y6fIXMuN-XSn3s7CHB-uKCX_hVu3q8Wp_3IYJ6AcNOI7Y6okvX7v0yeU3tGt7eWp9rVg-J0nOA=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -36,6 +40,7 @@ const artistInfo = [
     genre: "Rock",
     handle: "falloutboy",
     channelId: "UCkBwnm7GOfYHsacwUjriC-w",
+    playlistId: "PLFaewo-QNq7McBMtUCLUYQAePZ5eb6fjH",
     imgUrl:
       "https://yt3.googleusercontent.com/bKcjkZOD7EI5g6QUjjWedB6xIovkj_FNYQCJ6KrEOt4DCwp0nqAFe8qGG0HJNjoIIq3PGk8_aA=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -44,6 +49,7 @@ const artistInfo = [
     genre: "Rock",
     handle: "LinkinPark",
     channelId: "UCZU9T1ceaOgwfLRq7OKFU4Q",
+    playlistId: "PLlqZM4covn1FbNvE8hdc9ft4EY7reWaoi",
     imgUrl:
       "https://yt3.googleusercontent.com/ghibhu46qxFz2WJtl9qYgPASaaqb6U5WuZ0xQySouKEqamkSDTMKZZcPRqkXC833hWlS0RiYGg=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -52,6 +58,7 @@ const artistInfo = [
     genre: "Jazz",
     handle: "jazzmusickorea1",
     channelId: "UCsfYd7AVFk_ASiMudok6_sQ",
+    playlistId: "UULPsfYd7AVFk_ASiMudok6_sQ",
     imgUrl:
       "https://yt3.googleusercontent.com/Ux3pXv1zNxdnSi5iyModcNJhm43Rr7giYQy-2oShG9wHMeKSNzdBIzQEtgm7LNKKM4w97EuH=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -60,6 +67,7 @@ const artistInfo = [
     genre: "Jazz",
     handle: "parknpd",
     channelId: "UCJVryV6vgzZVMKMKIjvRgjg",
+    playlistId: "UULPJVryV6vgzZVMKMKIjvRgjg",
     imgUrl:
       "https://yt3.googleusercontent.com/W4owJggmOvmrNEVD14WbA-ZviNXQky6IeV5QDZBNeZrkN8EGCtVm87ROk_CfQQ2FHiJy7EbVhOQ=s160-c-k-c0x00ffffff-no-rj",
   },
@@ -68,6 +76,7 @@ const artistInfo = [
     genre: "CityPop",
     handle: "staywithme_miki",
     channelId: "UCz2w1NbLL_hUphhsZRAFljg",
+    playlistId: "OLAK5uy_nmJDdZFsKwzG-zHuYskLFFT0VQTcnE-uc",
     imgUrl:
       "https://yt3.googleusercontent.com/MtFV_QufFGuwSFisaxUSA5tcDEuy05731pwD9ySJEPVEx25Msx_3lCpLMZMJE4buYYyfXuauOw=s160-c-k-c0x00ffffff-no-rj",
   },
