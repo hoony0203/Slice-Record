@@ -1,5 +1,6 @@
 .section-3 {
   padding-bottom: 15rem;
+  z-index: 2;
 }
 
 .menu {
@@ -127,18 +128,12 @@
   transition: all 0.1s ease;
 }
 
-.blue {
-  background-color: blue;
-  width: 100px;
-  height: 100px;
-}
-
 .content-select-list {
   // border: 5px solid blue;
   padding: 2rem 1rem 1rem 1rem;
   height: 43rem;
   display: grid;
-  // overflow-y: auto;
+  overflow-y: auto;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 1fr);
   justify-items: center;

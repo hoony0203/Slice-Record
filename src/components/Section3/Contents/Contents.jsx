@@ -14,22 +14,8 @@ const Contents = () => {
   const { genreName, genreArtists, genreImage } = useGenreStore();
   const { getGenreArtistName } = useGenreStore((state) => state.actions);
 
-  useEffect(() => {
-    const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
-    // axios
-    //   .get(
-    //     `https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCvpredjG93ifbCP1Y77JyFA&maxResults=10&q=%E5%8B%87%E8%80%85&key=${apiKey}`
-    //   )
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-  }, []);
-
   return (
-    <div className="content-select-list">
+    <div data-lenis-prevent className="content-select-list">
       {/* {genreArtists.length > 0 ? (<GenreArtists />) : null} */}
 
       {menu[page - 1] == "artist" ? (

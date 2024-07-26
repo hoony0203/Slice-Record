@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import artistInfo from "../data/data";
 import axios from "axios";
+import { usePlayerStore } from "./playerStore";
 
 export const useArtistStore = create((set, get) => {
   return {
@@ -26,7 +27,10 @@ export const useArtistStore = create((set, get) => {
           artistName: array,
         });
       },
-      setArtistPage: (artistpageNum, playlistId) => {
+      setArtistPage: (artistpageNum, artist, playlistId) => {
+        // const playerStore = usePlayerStore.getState();
+        usePlayerStore.setState({ listOn: true });
+        usePlayerStore.setState({ playContent: artist });
         const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
         axios
           .get(
@@ -39,16 +43,15 @@ export const useArtistStore = create((set, get) => {
             list = list.filter(
               (video) => !video.snippet.description.includes("private")
             );
-            console.log(list);
-
             let array = new Array();
             for (let i = 0; i < list.length; i++) {
               let obj = {};
+              obj["artist"] = artist;
               obj["title"] = list[i].snippet.title;
               obj["videoId"] = list[i].contentDetails.videoId;
-              obj["playlistId"] = list[i].playlistId;
-              obj["thumbnail"] = list[i].snippet.thumbnails.standard.url;
-              // obj["imgUrl"] = list[i].imgUrl;
+              //obj["thumbnail"] = list[i].snippet.thumbnails.standard.url;
+              obj["thumbnail"] = list[i].snippet.thumbnails.high.url;
+
               array.push(obj);
             }
 
@@ -57,17 +60,15 @@ export const useArtistStore = create((set, get) => {
               playlistId: playlistId,
               artistVideoList: array,
             });
-            // console.log(result.data.items[0].snippet.title);
-            // console.log(result.data.items[0].snippet.thumbnails);
-            // console.log(result.data.items[0].snippet.thumbnails.maxres.url);
-            // console.log(result.data.items[0].snippet.thumbnails.standard.url);
-            //console.log(result.data.items[0].contentDetails.videoId);
-            // `https://www.youtube.com/watch?v=lUDPjyfmJrs`
           })
           .catch((err) => {
             console.log(err);
           });
       },
+      resetArtistVideoList: () =>
+        set({
+          artistVideoList: [],
+        }),
     },
   };
 });

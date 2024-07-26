@@ -3,9 +3,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Turntable2 from "./Turntable2";
+import Player from "../Section3/Player/Player";
 import Menu from "./Menu";
+import { usePlayerStore } from "../../store/playerStore";
 
 const Section2 = () => {
+  const { listOn } = usePlayerStore();
+
   let refs = useRef([]);
   let container = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -49,6 +53,7 @@ const Section2 = () => {
         start: "top 80%",
         end: "bottom 20%",
         scrub: true,
+        // markers: true,
       },
       opacity: 1,
       ease: "slow",
@@ -68,6 +73,7 @@ const Section2 = () => {
           <Turntable2 />
           <Menu />
         </div>
+        {listOn ? <Player /> : null}
       </section>
     </>
   );

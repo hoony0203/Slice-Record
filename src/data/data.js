@@ -27,6 +27,15 @@ const artistInfo = [
       "https://yt3.googleusercontent.com/I3ckNVLPQq04aQklOnRctTEnBjf7pkppVLV7WYe4Nb4g3sge1h-2IlXAvLnRGgrMkMfL4NadPQ=s160-c-k-c0x00ffffff-no-rj",
   },
   {
+    name: "Kenshi Yonezu",
+    genre: "JPop",
+    handle: "KenshiYonezu",
+    channelId: "08yakari",
+    playlistId: "PLb02MaZXm5_OGFGXSV-6U2_9f2MqnDBbm",
+    imgUrl:
+      "https://yt3.googleusercontent.com/ZvIhv4vPntCa1gA857E4hF014HSUZ4fHeUpNLaSTOkh-X4AndfoXiM1Koi0rotix2ddYAYLYGQ=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
     name: "Fall out boy",
     genre: "Rock",
     handle: "falloutboy",

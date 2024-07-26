@@ -1,0 +1,142 @@
+.section-4 {
+  opacity: 0;
+  position: relative;
+  // left: 0.5rem;
+  bottom: 50rem;
+  height: 80rem;
+  padding-block: 4rem;
+  padding-left: 2rem;
+  background-color: var(--cl-dark-bg);
+  height: 1000px;
+
+  p {
+    max-width: 50rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.visible {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.backBtn {
+  color: white;
+}
+
+.section-4-title {
+  position: relative;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.txt-light {
+  color: var(--cl-text-light);
+}
+
+.txt-light-sub {
+  color: var(--cl-text-light-sub);
+}
+
+.turntable4 {
+  overscroll-behavior: none;
+  border: 1px solid white;
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  margin-left: 4rem;
+  grid-column: 1/ 20;
+  grid-row: 2/3;
+  width: 90%;
+  height: 600px;
+  min-height: 0;
+}
+
+.video-item {
+  position: relative;
+  display: flex;
+  // border: 5px solid red;
+}
+
+.player-thumb-overlay {
+  display: none;
+  color: var(--cl-point-orange);
+  position: absolute;
+  bottom: 2.4rem;
+  height: 7.5rem;
+  width: 10rem;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.player-thumb {
+  cursor: pointer;
+  position: relative;
+  vertical-align: center;
+  width: 10rem;
+  height: 10rem;
+  aspect-ratio: 1 / 1;
+  transition: all 1s;
+  &:hover {
+    .player-thumb-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 1s;
+    }
+  }
+}
+
+.player-thumb-label {
+  position: absolute;
+  height: 8rem;
+  cursor: pointer;
+  max-width: 15rem;
+  bottom: 2.5rem;
+  left: 11.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  p {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-wrap: balance;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+}
+
+.playerMode {
+  position: absolute;
+  left: 65rem;
+  width: 28rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  .player-thumb {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+  .player-thumb-label {
+    bottom: 1.4rem;
+    left: 10rem;
+    p {
+      font-size: 1rem;
+      text-wrap: wrap;
+    }
+  }
+  .player-thumb-overlay {
+    bottom: 2.08rem;
+    height: 6.5rem;
+    width: 8.5rem;
+  }
+}
