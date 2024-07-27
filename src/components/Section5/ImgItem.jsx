@@ -11,7 +11,7 @@ const ImgItem = () => {
 let ItemList = () => {
   let array = new Array();
 
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 6; i++) {
     array.push(
       <div className="img-item" key={i}>
         <img

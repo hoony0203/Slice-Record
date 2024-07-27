@@ -14,7 +14,7 @@ const VideoPlay = () => {
         url={`https://www.youtube.com/embed/${playVideoId}?rel=0`}
         width="80rem"
         height="39rem"
-        muted={false} //chrome정책으로 인해 자동 재생을 위해 mute 옵션을 true로 해주었다.
+        muted={false}
         playing={false}
         loop={true}
         controls

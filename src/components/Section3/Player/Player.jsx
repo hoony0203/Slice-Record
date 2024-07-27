@@ -11,6 +11,7 @@ const Section3 = () => {
   const { resetVideoList } = usePlayerStore((state) => state.actions);
 
   const [opacity, setOpacity] = useState("");
+
   const videoListScrollRef = useRef(null);
 
   useEffect(() => {
@@ -40,8 +41,8 @@ const Section3 = () => {
         </div>
         {playerMode ? <VideoPlay /> : null}
         <div
-          ref={videoListScrollRef}
           data-lenis-prevent
+          ref={videoListScrollRef}
           className={`turntable4 ${playerMode ? "playerMode" : null}`}>
           <ArtistVideoList />
         </div>

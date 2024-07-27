@@ -10,7 +10,7 @@ const Section2 = () => {
               <span>Your </span>
             </div>
             <div>
-              <span>Reputation</span>
+              <span className="record-point">Reputation</span>
             </div>
             <div>
               <span>is our</span>

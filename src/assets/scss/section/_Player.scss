@@ -1,4 +1,12 @@
 .section-4 {
+  background: repeating-linear-gradient(
+      45deg,
+      #2b2b2b 0%,
+      #2b2b2b 10%,
+      #222222 0%,
+      #222222 50%
+    )
+    0 / 15px 15px;
   opacity: 0;
   position: relative;
   // left: 0.5rem;
@@ -6,7 +14,7 @@
   padding-block: 7rem;
   padding-left: 2rem;
   background-color: var(--cl-dark-bg);
-  height: 1000px;
+  height: 1200px;
 
   p {
     max-width: 50rem;
@@ -41,6 +49,7 @@
 .turntable4 {
   overscroll-behavior: none;
   border: 1px solid white;
+  background-color: var(--cl-dark-bg);
   display: grid;
   padding: 2rem;
   grid-template-columns: repeat(3, 1fr);
@@ -51,7 +60,7 @@
   grid-column: 1/ 20;
   grid-row: 2/3;
   width: 90%;
-  height: 600px;
+  height: 800px;
   min-height: 0;
 }
 
@@ -118,7 +127,7 @@
 .playerMode {
   position: absolute;
   border-radius: 10px;
-  bottom: 8.5rem;
+  bottom: 21rem;
   left: 80rem;
   width: 28rem;
   height: 38.8rem;
@@ -152,8 +161,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .react-Player {
-    width: 80rem;
-    height: 39.5rem;
-  }
 }

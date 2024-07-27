@@ -6,9 +6,21 @@ const Section1 = () => {
       <section className="section-1">
         <div className="container grid">
           <h1 className="title txt-black txt-up">
-            Kustom Packaging & Products For Konscious Brands
+            <p className="main-name">Grayish Orange</p>
+            <div className="sub-name">
+              <p className="sub">Customized </p>
+              <p className="point-orange">YT player</p>
+              <div className="sub-name-2">
+                <p className="sub">
+                  For
+                  <span className="point-orange"> Enthuaist</span>
+                </p>
+                <p className="sub">
+                  <span className="point-orange">Music</span> Listener
+                </p>
+              </div>
+            </div>
           </h1>
-          <div className="turntable1"></div>
         </div>
       </section>
     </>
