@@ -4,6 +4,7 @@ import { usePlayerStore } from "../../../store/playerStore";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
+import VideoPlay from "./VideoPlay";
 
 const Section3 = () => {
   const { listOn, playContent, playerMode } = usePlayerStore();
@@ -37,6 +38,7 @@ const Section3 = () => {
           </button>
           <p className="txt-black txt-up txt-light-sub">{playContent}</p>
         </div>
+        {playerMode ? <VideoPlay /> : null}
         <div
           ref={videoListScrollRef}
           data-lenis-prevent

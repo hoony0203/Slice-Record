@@ -10,13 +10,12 @@ import { usePlayerStore } from "../../store/playerStore";
 const Section2 = () => {
   const { listOn } = usePlayerStore();
 
-  let refs = useRef([]);
-  let container = useRef(null);
+  let wordRefs = useRef([]);
+
   gsap.registerPlugin(ScrollTrigger);
 
-  let phrase = `Kustom Packaging & Products For Konscious Brands Kustom Packaging &
-            Products For Konscious Brands Kustom Packaging & Products For
-            Konscious Brands Kustom Packaging & Products For Konscious Brands`;
+  let phrase = `Explore our products, made responsibly from renewable materials.
+WE’RE Nature Ninjas committed to kompostability, circularity, and affordability.`;
 
   let splitWords = (phrase) => {
     let body = [];
@@ -35,7 +34,7 @@ const Section2 = () => {
         <span
           key={letter + "_" + i}
           ref={(el) => {
-            refs.current.push(el);
+            wordRefs.current.push(el);
           }}>
           {letter}
         </span>
@@ -46,8 +45,8 @@ const Section2 = () => {
   };
 
   useGSAP(() => {
-    gsap.from(refs.current, { opacity: 0.3 });
-    gsap.to(refs.current, {
+    gsap.from(wordRefs.current, { opacity: 0.3 });
+    gsap.to(wordRefs.current, {
       scrollTrigger: {
         trigger: ".split-word",
         start: "top 80%",
@@ -66,11 +65,11 @@ const Section2 = () => {
     <>
       <section className="section-3">
         <div className="container grid ">
-          <h1 ref={container} className="title txt-black txt-up split-word">
+          <h1 className="title txt-black txt-up split-word">
             {splitWords(phrase)}
           </h1>
-
           <Turntable2 />
+
           <Menu />
         </div>
         {listOn ? <Player /> : null}

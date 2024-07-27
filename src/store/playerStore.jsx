@@ -8,10 +8,11 @@ export const usePlayerStore = create((set, get) => {
     listOn: false,
     playerMode: false,
     playContent: "",
+    playVideoId: "",
     actions: {
       setplayerMode: (videoId) => {
         console.log(videoId);
-        set({ playerMode: true });
+        set({ playerMode: true, playVideoId: videoId });
       },
       resetVideoList: () => {
         if (usePlayerStore.getState().playerMode == true) {

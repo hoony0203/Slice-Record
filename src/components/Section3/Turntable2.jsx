@@ -2,6 +2,7 @@ import React from "react";
 import { useMenuStore } from "../../store/store";
 import { useEffect } from "react";
 import Contents from "./Contents/Contents";
+import { useRef } from "react";
 
 const Turntable2 = () => {
   const { menu, page, pages, pageName } = useMenuStore();

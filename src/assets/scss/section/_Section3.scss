@@ -1,6 +1,15 @@
 .section-3 {
   padding-bottom: 15rem;
   z-index: 2;
+  .title {
+    padding-top: 0;
+    max-width: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  p {
+    margin-right: 2rem;
+  }
 }
 
 .menu {
@@ -12,14 +21,18 @@
 }
 
 .turntable2 {
+  // opacity: 0;
   float: right;
   position: sticky;
   top: 25rem;
-  grid-column: 4 / 10;
+  grid-column: 3 / 10;
   border: 5px solid black;
-  min-width: 600px;
-  max-width: 800px;
+  width: 800px;
   height: 800px;
+}
+
+.point-line {
+  border: 5px solid blue;
 }
 
 .turn2-nav {
