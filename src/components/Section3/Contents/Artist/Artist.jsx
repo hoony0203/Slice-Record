@@ -5,9 +5,7 @@ import { useShallow } from "zustand/react/shallow";
 
 const Artist = () => {
   const artistList = useArtistStore((state) => state.artistList);
-  const setArtistPage = useArtistStore(
-    useShallow((state) => state.actions.setArtistPage)
-  );
+  const setArtistPage = useArtistStore((state) => state.actions.setArtistPage);
 
   return (
     <>

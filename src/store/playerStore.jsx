@@ -2,12 +2,10 @@ import { create } from "zustand";
 import { useArtistStore } from "./artistStore";
 
 export const usePlayerStore = create((set, get) => {
-  const menu = ["genre", "artist", "favorite", "contact"];
-
   return {
     listOn: false,
     playerMode: false,
-    playContent: "",
+
     playVideoId: "",
     actions: {
       setplayerMode: (videoId) => {

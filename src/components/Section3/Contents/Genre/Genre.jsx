@@ -2,8 +2,10 @@ import React from "react";
 import { useGenreStore } from "../../../../store/genreStore";
 
 const Genre = () => {
-  const { genreName } = useGenreStore();
-  const { getGenreArtistName } = useGenreStore((state) => state.actions);
+  const genreName = useGenreStore((state) => state.genreName);
+  const getGenreArtistName = useGenreStore(
+    (state) => state.actions.getGenreArtistName
+  );
   return (
     <>
       {genreName.map((genre, i) => {
@@ -16,7 +18,7 @@ const Genre = () => {
             <div className="thumb-overlay"></div>
             <img
               src={`src/assets/img/genreImg/${genre}.jpg`}
-              alt="src/assets/img/genreImg/CityPop.jpg"
+              alt={`${genre}`}
             />
           </div>
         );

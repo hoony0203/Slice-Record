@@ -89,6 +89,7 @@ const artistInfo = [
     imgUrl:
       "https://yt3.googleusercontent.com/MtFV_QufFGuwSFisaxUSA5tcDEuy05731pwD9ySJEPVEx25Msx_3lCpLMZMJE4buYYyfXuauOw=s160-c-k-c0x00ffffff-no-rj",
   },
+
   {
     name: "Official髭男dism",
     genre: "JPop",
@@ -218,6 +219,132 @@ const artistInfo = [
   },
   {
     name: "André Rieu13",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu14",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu15",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu16",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu17",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu18",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu19",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu20",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu21",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu22",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu23",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu24",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu25",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu26",
+    genre: "Classic",
+    handle: "andrerieu",
+    channelId: "UCAaX9NjMCos_Qwz3n41eUgg",
+    playlistId: "PLbv4mtcyLmhKdUwH-nth1qD2asaJD3rTH",
+    imgUrl:
+      "https://yt3.googleusercontent.com/WON0-Y-iE_J-wkjIGSdZvCeSMhXGEQebj_M0GwlcH3lpYf411GQyeWIieAGaG5-tLA_NV1rr6w=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "André Rieu27",
     genre: "Classic",
     handle: "andrerieu",
     channelId: "UCAaX9NjMCos_Qwz3n41eUgg",

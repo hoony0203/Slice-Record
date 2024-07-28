@@ -1,11 +1,20 @@
 import { create } from "zustand";
 import artistInfo from "../data/data";
+import getArtistInfo from "../data/artistInfo";
+import { useMenuStore } from "./store";
 
 export const useGenreStore = create((set, get) => {
+  let array = new Array();
+  let result;
+  let firstSplice;
+  getArtistInfo(array);
+
   return {
     artist: artistInfo,
     genreName: [],
-    genreArtists: [],
+    selectedGenre: "",
+    genreArtistLoadCount: 0,
+    genreArtistList: [],
     actions: {
       getGenreName: () => {
         let array = new Array();
@@ -19,13 +28,61 @@ export const useGenreStore = create((set, get) => {
         });
       },
       getGenreArtistName: (genre) => {
-        let result = artistInfo.filter((artist) => artist.genre == genre);
-        let array = new Array();
-        array.push(...result);
-        set({ genreArtists: array });
+        console.log(genre);
+        result = array.filter((artist) => artist.genre == genre);
+
+        set({ selectedGenre: genre });
+        useMenuStore.setState({ pageName: "Genre" });
+        console.log("genreArtist1");
+
+        let genreArtistLoadCount =
+          useGenreStore.getState().genreArtistLoadCount;
+        const usualCount = 12;
+
+        if (genreArtistLoadCount == 0) {
+          console.log("genreArtist2");
+          console.log(result);
+
+          firstSplice = result.splice(0, usualCount);
+
+          console.log(firstSplice);
+
+          set({
+            genreArtistLoadCount: (genreArtistLoadCount += 1),
+            genreArtistList: firstSplice,
+          });
+          console.log(firstSplice);
+        } else if (genreArtistLoadCount >= 1 && result.length >= 12) {
+          console.log("genreArtist3");
+          let pageArray = result.splice(0, usualCount);
+          let newCopy = [
+            ...useGenreStore.getState().genreArtistList,
+            ...pageArray,
+          ];
+          set({
+            genreArtistLoadCount: (genreArtistLoadCount += 1),
+            genreArtistList: newCopy,
+          });
+        } else if (genreArtistLoadCount >= 1 && result.length < 12) {
+          console.log("genreArtist4");
+          let pageArray = result.splice(0, result.length);
+          let newCopy = [
+            ...useGenreStore.getState().genreArtistList,
+            ...pageArray,
+          ];
+
+          set({
+            genreArtistLoadCount: (genreArtistLoadCount += 1),
+            genreArtistList: newCopy,
+          });
+        }
       },
       resetArtistName: () => {
-        set({ genreArtists: [] });
+        set({
+          genreArtistList: [],
+          genreArtistLoadCount: 0,
+          selectedGenre: "",
+        });
       },
     },
   };

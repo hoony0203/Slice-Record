@@ -36,7 +36,7 @@ export const useArtistStore = create((set, get) => {
             artistList: newCopy,
           });
         } else if (loadCount >= 1 && array.length < 12) {
-          let pageArray = array.slice(0, array.length);
+          let pageArray = array.splice(0, array.length);
           let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
           set({
             loadCount: (loadCount += 1),

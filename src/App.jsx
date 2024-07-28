@@ -44,28 +44,28 @@ const App = () => {
       },
     });
 
-    const showNav = gsap
-      .from("#parallax__nav", {
-        yPercent: -200,
-        paused: true,
-        duration: 0.2,
-      })
-      .progress(1);
+    // const showNav = gsap
+    //   .from("#parallax__nav", {
+    //     yPercent: -200,
+    //     paused: true,
+    //     duration: 0.2,
+    //   })
+    //   .progress(1);
 
-    ScrollTrigger.create({
-      start: "top top",
-      end: 99999,
-      // markers: true,
-      onUpdate: (self) => {
-        self.direction === -1 ? showNav.play() : showNav.reverse();
-      },
-    });
+    // ScrollTrigger.create({
+    //   start: "top top",
+    //   end: 99999,
+    //   // markers: true,
+    //   onUpdate: (self) => {
+    //     self.direction === -1 ? showNav.play() : showNav.reverse();
+    //   },
+    // });
   });
 
   return (
     <div className="">
       <header id="header" role="banner">
-        <nav id="parallax__nav">
+        {/* <nav id="parallax__nav">
           <ul>
             <li>
               <a href="#section1" className="active">
@@ -97,7 +97,7 @@ const App = () => {
               <a href="#section9">s9</a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
 
       <main>

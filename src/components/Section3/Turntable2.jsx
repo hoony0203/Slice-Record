@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Contents from "./Contents/Contents";
 import { useRef } from "react";
 import { useShallow } from "zustand/react/shallow";
+import { useGenreStore } from "../../store/genreStore";
 
 const Turntable2 = () => {
   const [menu, page, pages, pageName] = useMenuStore(
@@ -15,13 +16,15 @@ const Turntable2 = () => {
       state.actions.decreasePage,
     ])
   );
+  const selectedGenre = useGenreStore((state) => state.selectedGenre);
 
   return (
     <div className="turntable2">
       <div className="turn2-nav flex">
         <div className="turn2-heading">
           <p className="txt-up txt-black">
-            {page == 0 ? pageName : menu[page - 1]}
+            {selectedGenre == "" ? pageName : `${pageName} / ${selectedGenre}`}
+            {/* {page == 0 ? pageName : menu[page - 1]} */}
           </p>
         </div>
         <div className="turn2-nav-control flex">

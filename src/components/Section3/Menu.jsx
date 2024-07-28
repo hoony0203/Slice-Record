@@ -13,6 +13,9 @@ const Menu = () => {
   const setPage = useMenuStore((state) => state.actions.setPage);
   const loadCount = useArtistStore((state) => state.loadCount);
   const getArtistName = useArtistStore((state) => state.actions.getArtistName);
+  const genreArtistLoadCount = useGenreStore(
+    (state) => state.genreArtistLoadCount
+  );
   const getGenreName = useGenreStore((state) => state.actions.getGenreName);
   const navigate = useNavigate();
 
@@ -22,9 +25,9 @@ const Menu = () => {
         {menu.map((item, i) => {
           return (
             <div
-              onMouseEnter={() => setPage(i)}
+              onMouseEnter={() => setPage(i, item)}
               onClick={
-                i == 0
+                i == 0 && genreArtistLoadCount == 0
                   ? getGenreName
                   : i == 1 && loadCount == 0
                   ? getArtistName
