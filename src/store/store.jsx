@@ -6,7 +6,7 @@ export const useMenuStore = create((set, get) => {
   return {
     menu: menu,
     page: 0,
-    pageName: "product kategories",
+    pageName: "Menu Select",
     pages: menu.length,
     actions: {
       setPage: (i) =>

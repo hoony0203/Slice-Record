@@ -2,7 +2,7 @@ import React from "react";
 import ReactPlayer from "react-player/youtube";
 import { usePlayerStore } from "../../../store/playerStore";
 const VideoPlay = () => {
-  const { playVideoId } = usePlayerStore();
+  const playVideoId = usePlayerStore((state) => state.playVideoId);
 
   return (
     <div className="video-container">

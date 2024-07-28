@@ -4,12 +4,16 @@ import { useMenuStore } from "../../store/store";
 import { useArtistStore } from "../../store/artistStore";
 import { useGenreStore } from "../../store/genreStore";
 import { useEffect } from "react";
+import { useShallow } from "zustand/react/shallow";
 
 const Menu = () => {
-  const { menu, page, pages, pageName } = useMenuStore();
-  const { setPage } = useMenuStore((state) => state.actions);
-  const { getArtistName } = useArtistStore((state) => state.actions);
-  const { getGenreName } = useGenreStore((state) => state.actions);
+  const [menu, page] = useMenuStore(
+    useShallow((state) => [state.menu, state.page])
+  );
+  const setPage = useMenuStore((state) => state.actions.setPage);
+  const loadCount = useArtistStore((state) => state.loadCount);
+  const getArtistName = useArtistStore((state) => state.actions.getArtistName);
+  const getGenreName = useGenreStore((state) => state.actions.getGenreName);
   const navigate = useNavigate();
 
   return (
@@ -19,7 +23,13 @@ const Menu = () => {
           return (
             <div
               onMouseEnter={() => setPage(i)}
-              onClick={i == 0 ? getGenreName : i == 1 ? getArtistName : null}
+              onClick={
+                i == 0
+                  ? getGenreName
+                  : i == 1 && loadCount == 0
+                  ? getArtistName
+                  : null
+              }
               className="flex menu-item"
               key={i}>
               <div>

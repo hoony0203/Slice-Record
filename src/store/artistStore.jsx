@@ -1,34 +1,50 @@
 import { create } from "zustand";
 import artistInfo from "../data/data";
+import getArtistInfo from "../data/artistInfo";
 import axios from "axios";
+import { useMenuStore } from "./store";
 import { usePlayerStore } from "./playerStore";
 
 export const useArtistStore = create((set, get) => {
+  let array = new Array();
+  getArtistInfo(array);
   return {
     artist: artistInfo,
-    // defaultImg: true,
-    artistName: [],
-    artistPage: "2-1",
+    loadCount: 0,
+    defaultImg: false,
+    artistList: [],
     playlistId: "",
     artistVideoList: [],
     actions: {
       getArtistName: () => {
-        let array = new Array();
-        for (let i = 0; i < artistInfo.length; i++) {
-          let obj = {};
-          obj["name"] = artistInfo[i].name;
-          obj["channelId"] = artistInfo[i].channelId;
-          obj["playlistId"] = artistInfo[i].playlistId;
-          obj["genre"] = artistInfo[i].genre;
-          obj["imgUrl"] = artistInfo[i].imgUrl;
-          array.push(obj);
+        useMenuStore.setState({ pageName: "Artist" });
+        let loadCount = useArtistStore.getState().loadCount;
+        let firstSplice;
+        const usualCount = 12;
+        if (loadCount == 0) {
+          firstSplice = array.splice(0, usualCount);
+          let copy = [...firstSplice];
+          set({
+            loadCount: (loadCount += 1),
+            artistList: copy,
+          });
+        } else if (loadCount >= 1 && array.length >= 12) {
+          let pageArray = array.splice(0, usualCount);
+          let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
+          set({
+            loadCount: (loadCount += 1),
+            artistList: newCopy,
+          });
+        } else if (loadCount >= 1 && array.length < 12) {
+          let pageArray = array.slice(0, array.length);
+          let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
+          set({
+            loadCount: (loadCount += 1),
+            artistList: newCopy,
+          });
         }
-        set({
-          artistName: array,
-        });
       },
-      setArtistPage: (artistpageNum, artist, playlistId) => {
-        // const playerStore = usePlayerStore.getState();
+      setArtistPage: (artist, playlistId) => {
         usePlayerStore.setState({ listOn: true });
         usePlayerStore.setState({ playContent: artist });
         const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
@@ -49,14 +65,11 @@ export const useArtistStore = create((set, get) => {
               obj["artist"] = artist;
               obj["title"] = list[i].snippet.title;
               obj["videoId"] = list[i].contentDetails.videoId;
-              //obj["thumbnail"] = list[i].snippet.thumbnails.standard.url;
               obj["thumbnail"] = list[i].snippet.thumbnails.high.url;
-
               array.push(obj);
             }
 
             set({
-              artistPage: artistpageNum,
               playlistId: playlistId,
               artistVideoList: array,
             });

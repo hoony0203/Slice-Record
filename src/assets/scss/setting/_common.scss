@@ -36,16 +36,42 @@ body {
 
 main {
 }
+
+#parallax__nav {
+  position: fixed;
+  // right: 20px;
+  top: 20px;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-align: center;
+}
+#parallax__nav li {
+  list-style: none;
+  display: inline;
+}
+#parallax__nav li a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  line-height: 30px;
+  transition: all 0.3s;
+}
+#parallax__nav li a.active {
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
+}
+
 .wrapper {
   position: relative;
   height: 350vh;
 }
 
 .turntable1 {
-  // grid-column: 4/10;
-  // display: flex;
-  // justify-content: flex-end;
-  // border: 5px solid red;
   z-index: 3;
   position: absolute;
   bottom: 42.9%;
@@ -60,18 +86,7 @@ main {
   left: 65rem;
   width: 40%;
   height: 60vh;
-  animation: neon2 1.5s ease-in-out infinite alternate;
   img {
     height: 100%;
-  }
-}
-@keyframes neon2 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9900,
-      0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff9900,
-      0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
   }
 }

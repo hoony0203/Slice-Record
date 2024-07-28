@@ -3,10 +3,18 @@ import { useMenuStore } from "../../store/store";
 import { useEffect } from "react";
 import Contents from "./Contents/Contents";
 import { useRef } from "react";
+import { useShallow } from "zustand/react/shallow";
 
 const Turntable2 = () => {
-  const { menu, page, pages, pageName } = useMenuStore();
-  const { increasePage, decreasePage } = useMenuStore((state) => state.actions);
+  const [menu, page, pages, pageName] = useMenuStore(
+    useShallow((state) => [state.menu, state.page, state.pages, state.pageName])
+  );
+  const [increasePage, decreasePage] = useMenuStore(
+    useShallow((state) => [
+      state.actions.increasePage,
+      state.actions.decreasePage,
+    ])
+  );
 
   return (
     <div className="turntable2">

@@ -8,7 +8,7 @@ import Menu from "./Menu";
 import { usePlayerStore } from "../../store/playerStore";
 
 const Section2 = () => {
-  const { listOn } = usePlayerStore();
+  const listOn = usePlayerStore((state) => state.listOn);
 
   let wordRefs = useRef([]);
 

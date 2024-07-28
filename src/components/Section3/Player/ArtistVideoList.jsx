@@ -4,9 +4,9 @@ import { usePlayerStore } from "../../../store/playerStore";
 import { useState } from "react";
 
 const ArtistVideoList = () => {
-  const { artistVideoList } = useArtistStore();
+  const artistVideoList = useArtistStore((state) => state.artistVideoList);
   const { listOn } = usePlayerStore();
-  const { setplayerMode } = usePlayerStore((state) => state.actions);
+  const setplayerMode = usePlayerStore((state) => state.actions.setPlayerMode);
 
   return (
     <>

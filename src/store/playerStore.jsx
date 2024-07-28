@@ -11,7 +11,6 @@ export const usePlayerStore = create((set, get) => {
     playVideoId: "",
     actions: {
       setplayerMode: (videoId) => {
-        console.log(videoId);
         set({ playerMode: true, playVideoId: videoId });
       },
       resetVideoList: () => {

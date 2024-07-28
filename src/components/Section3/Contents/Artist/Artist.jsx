@@ -1,27 +1,26 @@
 import React from "react";
 
 import { useArtistStore } from "../../../../store/artistStore";
-import { useEffect } from "react";
+import { useShallow } from "zustand/react/shallow";
 
 const Artist = () => {
-  const { artistPage, artistName } = useArtistStore();
-
-  const { setArtistPage } = useArtistStore((state) => state.actions);
+  const artistList = useArtistStore((state) => state.artistList);
+  const setArtistPage = useArtistStore(
+    useShallow((state) => state.actions.setArtistPage)
+  );
 
   return (
     <>
-      {/* {artistPage} */}
-      {artistName.map((item, i) => {
+      {artistList.map((item, i) => {
         return (
           <div
             className="thumb"
             key={i}
-            onClick={() => setArtistPage("2-2", item.name, item.playlistId)}>
+            onClick={() => setArtistPage(item.name, item.playlistId)}>
             <label className="thumb-label">
               {item.name}
               <span className="label-point"> {item.genre} </span>
             </label>
-            {/* {item.channelId} */}
             <div className="thumb-overlay"></div>
             <img src={item.imgUrl} />
           </div>
