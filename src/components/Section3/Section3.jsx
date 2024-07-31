@@ -12,8 +12,6 @@ const Section2 = () => {
 
   let wordRefs = useRef([]);
 
-  gsap.registerPlugin(ScrollTrigger);
-
   let phrase = `Explore our products, made responsibly from renewable materials.
 WE’RE Nature Ninjas committed to kompostability, circularity, and affordability.`;
 
@@ -45,6 +43,7 @@ WE’RE Nature Ninjas committed to kompostability, circularity, and affordabilit
   };
 
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
     gsap.from(wordRefs.current, { opacity: 0.3 });
     gsap.to(wordRefs.current, {
       scrollTrigger: {
@@ -58,6 +57,7 @@ WE’RE Nature Ninjas committed to kompostability, circularity, and affordabilit
       ease: "slow",
       duration: 5,
       stagger: 1,
+      // invalidateOnRefresh: true,
     });
   });
 

@@ -37,56 +37,8 @@ body {
 main {
 }
 
-#parallax__nav {
-  position: fixed;
-  // right: 20px;
-  top: 20px;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 15px 20px;
-  border-radius: 50px;
-  text-align: center;
-}
-#parallax__nav li {
-  list-style: none;
-  display: inline;
-}
-#parallax__nav li a {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  text-align: center;
-  line-height: 30px;
-  transition: all 0.3s;
-}
-#parallax__nav li a.active {
-  background: #fff;
-  color: #000;
-  border-radius: 30px;
-}
-
 .wrapper {
+  width: 500vw;
   position: relative;
   height: 350vh;
-}
-
-.turntable1 {
-  z-index: 3;
-  position: absolute;
-  bottom: 42.9%;
-  height: inherit;
-  width: 100%;
-}
-
-.record {
-  position: sticky;
-  z-index: 4;
-  top: 27vh;
-  left: 65rem;
-  width: 40%;
-  height: 60vh;
-  img {
-    height: 100%;
-  }
 }

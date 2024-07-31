@@ -21,41 +21,39 @@ const Menu = () => {
 
   return (
     <div className="menu">
-      <div>
-        {menu.map((item, i) => {
-          return (
-            <div
-              onMouseEnter={() => setPage(i, item)}
-              onClick={
-                i == 0 && genreArtistLoadCount == 0
-                  ? getGenreName
-                  : i == 1 && loadCount == 0
-                  ? getArtistName
-                  : null
-              }
-              className="flex menu-item"
-              key={i}>
-              <div>
-                <h3
-                  className={
-                    `txt-up txt-black` + (page == i + 1 ? " menu-active" : "")
-                  }>
-                  {item}
-                </h3>
-              </div>
-              <div className="menu-num">
-                <p>0{i + 1}</p>
-                <div className="num-inner">
-                  <i className="fa-sharp fa-solid fa-square-arrow-up-right"></i>
-                </div>
-              </div>
-              <div className="line">
-                <div className="line-inner"></div>
+      {menu.map((item, i) => {
+        return (
+          <div
+            onMouseEnter={() => setPage(i, item)}
+            onClick={
+              i == 0 && genreArtistLoadCount == 0
+                ? getGenreName
+                : i == 1 && loadCount == 0
+                ? getArtistName
+                : null
+            }
+            className="flex menu-item"
+            key={i}>
+            <div>
+              <h3
+                className={
+                  `txt-up txt-black` + (page == i + 1 ? " menu-active" : "")
+                }>
+                {item}
+              </h3>
+            </div>
+            <div className="menu-num">
+              <p>0{i + 1}</p>
+              <div className="num-inner">
+                <i className="fa-sharp fa-solid fa-square-arrow-up-right"></i>
               </div>
             </div>
-          );
-        })}
-      </div>
+            <div className="line">
+              <div className="line-inner"></div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

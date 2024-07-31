@@ -10,7 +10,7 @@
 - vite (JS + SWC)
 - react
 - useGSAP
-- youTube Api, rapid Api
+- youTube Api
 - netlify
 - git
 

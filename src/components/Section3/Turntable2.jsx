@@ -18,8 +18,14 @@ const Turntable2 = () => {
   );
   const selectedGenre = useGenreStore((state) => state.selectedGenre);
 
+  const turn2Ref = useRef(null);
+
+  useEffect(() => {
+    console.log(turn2Ref.current.scrollTop);
+  }, [turn2Ref]);
+
   return (
-    <div className="turntable2">
+    <div ref={turn2Ref} className="turntable2">
       <div className="turn2-nav flex">
         <div className="turn2-heading">
           <p className="txt-up txt-black">

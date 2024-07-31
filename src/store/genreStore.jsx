@@ -28,30 +28,22 @@ export const useGenreStore = create((set, get) => {
         });
       },
       getGenreArtistName: (genre) => {
-        console.log(genre);
         result = array.filter((artist) => artist.genre == genre);
 
         set({ selectedGenre: genre });
         useMenuStore.setState({ pageName: "Genre" });
-        console.log("genreArtist1");
 
         let genreArtistLoadCount =
           useGenreStore.getState().genreArtistLoadCount;
         const usualCount = 12;
 
         if (genreArtistLoadCount == 0) {
-          console.log("genreArtist2");
-          console.log(result);
-
           firstSplice = result.splice(0, usualCount);
-
-          console.log(firstSplice);
 
           set({
             genreArtistLoadCount: (genreArtistLoadCount += 1),
             genreArtistList: firstSplice,
           });
-          console.log(firstSplice);
         } else if (genreArtistLoadCount >= 1 && result.length >= 12) {
           console.log("genreArtist3");
           let pageArray = result.splice(0, usualCount);

@@ -2,8 +2,10 @@ import { useEffect, React } from "react";
 import { Routes, Route } from "react-router-dom";
 import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
+import Introduce from "./components/Section2-2/Introduce";
 import Section3 from "./components/Section3/Section3";
 import Section5 from "./components/Section5/Section5";
+import Section6 from "./components/Section6/Section6";
 import { usePlayerStore } from "./store/playerStore";
 
 import lenis from "./util/lenis";
@@ -43,62 +45,11 @@ const App = () => {
         self.direction === -1 ? record.reverse() : record.play();
       },
     });
-
-    // const showNav = gsap
-    //   .from("#parallax__nav", {
-    //     yPercent: -200,
-    //     paused: true,
-    //     duration: 0.2,
-    //   })
-    //   .progress(1);
-
-    // ScrollTrigger.create({
-    //   start: "top top",
-    //   end: 99999,
-    //   // markers: true,
-    //   onUpdate: (self) => {
-    //     self.direction === -1 ? showNav.play() : showNav.reverse();
-    //   },
-    // });
   });
 
   return (
     <div className="">
-      <header id="header" role="banner">
-        {/* <nav id="parallax__nav">
-          <ul>
-            <li>
-              <a href="#section1" className="active">
-                s1
-              </a>
-            </li>
-            <li>
-              <a href="#section2">s2</a>
-            </li>
-            <li>
-              <a href="#section3">s3</a>
-            </li>
-            <li>
-              <a href="#section4">s4</a>
-            </li>
-            <li>
-              <a href="#section5">s5</a>
-            </li>
-            <li>
-              <a href="#section6">s6</a>
-            </li>
-            <li>
-              <a href="#section7">s7</a>
-            </li>
-            <li>
-              <a href="#section8">s8</a>
-            </li>
-            <li>
-              <a href="#section9">s9</a>
-            </li>
-          </ul>
-        </nav> */}
-      </header>
+      <header id="header" role="banner"></header>
 
       <main>
         <div className="wrapper">
@@ -109,8 +60,10 @@ const App = () => {
             </div>
           </div>
           <Section2 />
+          <Introduce />
           <Section3 />
           <Section5 />
+          <Section6 />
         </div>
       </main>
     </div>
