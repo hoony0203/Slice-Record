@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const ArtistVideoList = () => {
   const artistVideoList = useArtistStore((state) => state.artistVideoList);
-  const setplayerMode = usePlayerStore((state) => state.actions.setPlayerMode);
+  const { setplayerMode } = usePlayerStore((state) => state.actions);
 
   return (
     <>

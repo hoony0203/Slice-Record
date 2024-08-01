@@ -20,9 +20,7 @@ const Turntable2 = () => {
 
   const turn2Ref = useRef(null);
 
-  useEffect(() => {
-    console.log(turn2Ref.current.scrollTop);
-  }, [turn2Ref]);
+  useEffect(() => {}, [turn2Ref]);
 
   return (
     <div ref={turn2Ref} className="turntable2">

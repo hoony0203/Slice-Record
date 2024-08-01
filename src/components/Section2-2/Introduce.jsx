@@ -48,9 +48,7 @@ const Introduce = () => {
               </div>
             </div>
           </div>
-          <div className="stack flex">
-            <ImgItem />
-          </div>
+          <div className="stack flex"></div>
         </div>
       </div>
       <div className="horizon-item">
@@ -62,6 +60,10 @@ const Introduce = () => {
           <div>
             <label>react</label>
             <progress value="40" max="100" />
+            합리적인 방식으로 컴포넌트를 분리하여 컴포넌트의 재사용성을
+            높입니다. React Hooks 사용이 능숙하고 Recoil, Redux 등으로 상태
+            관리가 가능합니다. 라이프 사이클을 이해하며 사용하고, 성능 최적화를
+            고민합니다.
           </div>
           <div>
             <label>javascript</label>

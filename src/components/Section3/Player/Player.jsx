@@ -53,7 +53,7 @@ const Section3 = () => {
         <div
           data-lenis-prevent
           ref={videoListScrollRef}
-          className={`turntable4 ${playerMode ? "playerMode" : null}`}>
+          className={`turntable4 ${playerMode ? "playerMode" : ""}`}>
           <ArtistVideoList />
         </div>
       </section>

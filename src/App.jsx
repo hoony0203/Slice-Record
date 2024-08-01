@@ -63,7 +63,6 @@ const App = () => {
           <Introduce />
           <Section3 />
           <Section5 />
-          <Section6 />
         </div>
       </main>
     </div>

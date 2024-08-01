@@ -6,7 +6,7 @@ const ImgItem = () => {
     <>
       {stack.map((stack, i) => {
         return (
-          <div className="stack-item" key={i}>
+          <div className="img-item" key={i}>
             <label>
               <p>{stack.name}</p>
             </label>
