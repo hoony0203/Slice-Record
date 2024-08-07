@@ -28,7 +28,6 @@
 }
 
 .turntable2 {
-  // opacity: 0;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   float: right;
@@ -38,10 +37,6 @@
   width: 800px;
   height: 800px;
 }
-
-// .point-line {
-//   border: 5px solid blue;
-// }
 
 .turn2-nav {
   justify-content: space-between;
@@ -96,7 +91,7 @@
   top: 2rem;
   left: -1.5rem;
   opacity: 0;
-  // translate: (-100%, 100%);
+
   transition: all 0.2s ease;
 }
 
@@ -208,19 +203,49 @@
   .turn2-nav-arrow:nth-of-type(2) {
     border-right: 5px solid black;
   }
+  .turntable2 {
+    right: 5rem;
+  }
+}
+@media screen and (max-width: 1920px) {
+  .menu {
+    font-size: 3.625vh;
+    max-width: 75vh;
+  }
+  .turntable2 {
+    right: 5rem;
+  }
+}
+@media screen and (max-width: 1800px) {
+  .menu {
+    font-size: 3.625vh;
+    max-width: 70vh;
+  }
+  .turntable2 {
+    right: 3rem;
+  }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1700px) {
+  .menu {
+    font-size: 3.625vh;
+    max-width: 50vh;
+  }
+  .turntable2 {
+    right: 3rem;
+  }
+}
+
+@media screen and (max-width: 1660px) {
   .section-3 {
-    .grid {
-      display: unset;
-    }
     .title {
       font-size: 10vh;
     }
   }
   .menu {
     display: flex;
+    flex-wrap: wrap;
+    max-width: 45rem;
     font-size: 3.625vh;
     margin-bottom: 6rem;
     padding-top: 5rem;
@@ -251,11 +276,58 @@
   }
 
   .turntable2 {
-    position: relative;
     right: 5rem;
-    top: 14rem;
-    border: 5px solid black;
+    top: 15rem;
+    width: 600px;
+    height: 600px;
+  }
+
+  .content-select-list {
+    height: 29.9rem;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
+  .thumb {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .thumb-overlay {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .thumb-label {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1520px) {
+  .section-3 {
+    .title {
+      font-size: 16vh;
+    }
+  }
+
+  .menu {
+    display: flex;
+    max-width: 75rem;
+    font-size: 3.625vh;
+    margin-bottom: 6rem;
+    padding-top: 1rem;
+  }
+
+  .turntable2 {
+    position: relative;
+    // z-index: 1;
+    top: 255rem;
+    right: 60rem;
     width: 800px;
     height: 800px;
+    margin-bottom: 6rem;
+  }
+
+  .content-select-list {
+    height: 42.4rem;
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import stack from "../../data/stackImage";
+import { stack } from "../../data/stackSkills";
 
 const ImgItem = () => {
   return (

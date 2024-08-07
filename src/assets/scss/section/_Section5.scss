@@ -61,10 +61,16 @@
 .img-item {
   aspect-ratio: 1 / 1;
   width: 500px;
-  height: 500px;
+  height: 5g00px;
   border: solid 0.2rem gray;
   margin: -0.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 1520px) {
+  .section-5 {
+    margin-top: 45rem;
+  }
 }

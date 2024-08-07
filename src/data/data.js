@@ -126,6 +126,15 @@ const artistInfo = [
     imgUrl:
       "https://yt3.googleusercontent.com/S_jTelpAHOdADumYkZAtwyLydEkqtv39s3T-Rmif0v1WCDb8pZit-Vlo43pR1jBEn0Tmcpkx=s160-c-k-c0x00ffffff-no-rj",
   },
+  {
+    name: "중식이",
+    genre: "Rock",
+    handle: "GagRocker",
+    channelId: "UC0VF24Tfg83nyjB9WDD7Aiw",
+    playlistId: "PLwT8eIPZsY9WbaRuXNutA0Pc6suXng7G1",
+    imgUrl:
+      "https://yt3.googleusercontent.com/bkARTcAUZybTCWpDb6u0eQEW8G_nJaDJ942bZEKpivHDrSYjQl5AcROT8suW9fwGmo_23kbgLoc=s160-c-k-c0x00ffffff-no-rj",
+  },
 
   // {
   //   name: "André Rieu2",

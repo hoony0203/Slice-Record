@@ -1,9 +1,4 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
-import { useRef } from "react";
-import Section5 from "../Section5/Section5";
 
 const Section2 = () => {
   return (
@@ -14,7 +9,7 @@ const Section2 = () => {
             <span>Your</span>
           </div>
           <div>
-            <span className="record-point">Reputation</span>
+            <span>Reputation</span>
           </div>
           <div>
             <span>is our</span>

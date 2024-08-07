@@ -12,8 +12,8 @@ const Section2 = () => {
 
   let wordRefs = useRef([]);
 
-  let phrase = `Explore our products, made responsibly from renewable materials.
-WE’RE Nature Ninjas committed to kompostability, circularity, and affordability.`;
+  let phrase = `Explore our services, customized by favorite genre and artists.
+Declared Genre and Artist category are give you more convenience and Youtube accessibility.`;
 
   let splitWords = (phrase) => {
     let body = [];

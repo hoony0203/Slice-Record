@@ -45,8 +45,7 @@ const Section3 = () => {
             Back
           </button>
           <p className="txt-black txt-up txt-light-sub">
-            {pageName}
-            {playContent}
+            {pageName} / {playContent}
           </p>
         </div>
         {playerMode ? <VideoPlay /> : null}

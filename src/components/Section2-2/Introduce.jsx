@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React from "react";
 import { useRef } from "react";
-import Section5 from "../Section5/Section5";
-import ImgItem from "../Section5/ImgItem";
+import Skills from "./Skills";
+import About from "./About";
+import Colorstack from "./Colorstack";
 
 const Introduce = () => {
   const sectionRef = useRef(null);
@@ -13,7 +13,7 @@ const Introduce = () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(sectionRef.current, { translateX: 50 });
     gsap.to(sectionRef.current, {
-      translateX: -sectionRef.current.offsetWidth + 200,
+      translateX: -sectionRef.current.offsetWidth + 50,
       ease: "none",
       scrollTrigger: {
         trigger: ".section2-2",
@@ -29,39 +29,15 @@ const Introduce = () => {
   return (
     <section ref={sectionRef} className="section2-2">
       <div className="horizon-item">
-        <div className="color-stack grid">
-          <div className="main-colors">
-            <div className="frame">
-              <div className="main-bg-color">
-                <div className="wrap">
-                  <div className="front">
-                    <i className="fa-solid fa-music"></i>
-                  </div>
-                  <div className="back">#e7ddcf light grayish-orange</div>
-                </div>
-              </div>
-            </div>
-            <div className="main-point-color">
-              <div className="wrap">
-                <i className="fa-solid fa-music"></i>
-                #dd6013 Vivid Red-Tangelo
-              </div>
-            </div>
-          </div>
-          <div className="stack flex"></div>
-        </div>
+        <Colorstack />
       </div>
       <div className="horizon-item">
         <div className="skills flex">
-          <Skills/>
+          <Skills />
+        </div>
       </div>
       <div className="horizon-item">
-        <div className="about flex">
-          <div className="profile">
-            <img src="src/assets/img/limChangHoon.jpg" alt="" />
-          </div>
-          github email
-        </div>
+        <About />
       </div>
     </section>
   );
