@@ -1,4 +1,3 @@
-import React from "react";
 import { useShallow } from "zustand/react/shallow";
 import { useMenuStore } from "../../../store/store";
 import { useArtistStore } from "../../../store/artistStore";
@@ -6,6 +5,8 @@ import { useGenreStore } from "../../../store/genreStore";
 import Artist from "./Artist/Artist";
 import Genre from "./Genre/Genre";
 import GenreArtists from "./Genre/GenreArtists";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Contents = () => {
   const [menu, page] = useMenuStore(
@@ -15,6 +16,14 @@ const Contents = () => {
   const { genreName, genreArtistList, genreImage } = useGenreStore();
   const getArtistName = useArtistStore((state) => state.actions.getArtistName);
   const { getGenreArtistName } = useGenreStore((state) => state.actions);
+  // const target = useRef(null);
+  const [target, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      getArtistName;
+    }
+  }, [inView]);
 
   return (
     <div data-lenis-prevent className="content-select-list">
@@ -26,13 +35,13 @@ const Contents = () => {
               <button onClick={getArtistName}>load More</button>
             ) : null}
           </div>
+          <div ref={target}></div>
         </>
       ) : menu[page - 1] == "genre" ? (
         <>
-          {" "}
           {genreArtistList.length >= 1 ? (
             <>
-              <GenreArtists />{" "}
+              <GenreArtists />
               <button onClick={getGenreArtistName}>load More</button>
             </>
           ) : (

@@ -1,12 +1,10 @@
-import { useEffect, React } from "react";
-import { Routes, Route } from "react-router-dom";
-import Section1 from "./components/Section1/Section1";
-import Section2 from "./components/Section2/Section2";
-import Introduce from "./components/Section2-2/Introduce";
-import Section3 from "./components/Section3/Section3";
-import Section5 from "./components/Section5/Section5";
-import Section6 from "./components/Section6/Section6";
-import { usePlayerStore } from "./store/playerStore";
+import { useEffect, lazy } from "react";
+const Section1 = lazy(() => import("./components/Section1/Section1"));
+const Section2 = lazy(() => import("./components/Section2/Section2"));
+const Introduce = lazy(() => import("./components/Section2-2/Introduce"));
+const Section3 = lazy(() => import("./components/Section3/Section3"));
+const Section5 = lazy(() => import("./components/Section5/Section5"));
+const Section6 = lazy(() => import("./components/Section6/Section6"));
 
 import lenis from "./util/lenis";
 import { useRef } from "react";
@@ -63,6 +61,7 @@ const App = () => {
           <Introduce />
           <Section3 />
           <Section5 />
+          <Section6 />
         </div>
       </main>
     </div>

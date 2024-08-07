@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useArtistStore } from "../../../../store/artistStore";
-import { useShallow } from "zustand/react/shallow";
 
 const Artist = () => {
   const artistList = useArtistStore((state) => state.artistList);
