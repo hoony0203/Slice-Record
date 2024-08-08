@@ -60,7 +60,7 @@ const App = () => {
           <Section2 />
           <Introduce />
           <Section3 />
-          <Section5 />
+          {/* <Section5 /> */}
           <Section6 />
         </div>
       </main>

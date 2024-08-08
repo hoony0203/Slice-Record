@@ -57,7 +57,7 @@
 }
 
 @mixin front($bg-color) {
-  height: 100%;
+  height: 99%;
   position: relative;
   background-color: $bg-color;
   backface-visibility: hidden;
@@ -74,7 +74,7 @@
 
 @mixin back($bg-color) {
   position: relative;
-  height: 100%;
+  height: 99%;
   bottom: 25rem;
   background-color: $bg-color;
   transform: rotateX(180deg);

@@ -1,4 +1,3 @@
-import React from "react";
 import ImgItem from "./ImgItem";
 
 const Section5 = () => {
@@ -12,14 +11,9 @@ const Section5 = () => {
           </h2>
         </div>
         <div className="sub-title">
-          <p className="txt-up txt-black">
-            Proudly recognized for our innovation and quality, we are the
-            trusted partner of choice for leading businesses across various
-            sectors.
-          </p>
+          <p className="txt-up txt-black"></p>
         </div>
         <div className="grid-holder"></div>
-        {/* <div className="map"></div> */}
         <ImgItem />
       </div>
     </section>

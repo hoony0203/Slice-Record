@@ -6,6 +6,7 @@ import { useMenuStore } from "./store";
 export const useGenreStore = create((set, get) => {
   let array = new Array();
   let result;
+  let remain;
   let firstSplice;
   getArtistInfo(array);
 
@@ -29,42 +30,37 @@ export const useGenreStore = create((set, get) => {
       },
       getGenreArtistName: (genre) => {
         result = array.filter((artist) => artist.genre == genre);
-
-        set({ selectedGenre: genre });
-        useMenuStore.setState({ pageName: "Genre" });
-
-        let genreArtistLoadCount =
-          useGenreStore.getState().genreArtistLoadCount;
+        let genreCount = useGenreStore.getState().genreArtistLoadCount;
         const usualCount = 12;
-
-        if (genreArtistLoadCount == 0) {
+        if (genreCount == 0) {
+          set({ selectedGenre: genre });
+          useMenuStore.setState({ pageName: "Genre" });
           firstSplice = result.splice(0, usualCount);
-
+          remain = [...result];
           set({
-            genreArtistLoadCount: (genreArtistLoadCount += 1),
+            genreArtistLoadCount: (genreCount += 1),
             genreArtistList: firstSplice,
           });
-        } else if (genreArtistLoadCount >= 1 && result.length >= 12) {
+        } else if (genreCount >= 1 && remain.length >= 12) {
           console.log("genreArtist3");
-          let pageArray = result.splice(0, usualCount);
+          let pageArray = remain.splice(0, usualCount);
           let newCopy = [
             ...useGenreStore.getState().genreArtistList,
             ...pageArray,
           ];
           set({
-            genreArtistLoadCount: (genreArtistLoadCount += 1),
+            genreArtistLoadCount: (genreCount += 1),
             genreArtistList: newCopy,
           });
-        } else if (genreArtistLoadCount >= 1 && result.length < 12) {
-          console.log("genreArtist4");
-          let pageArray = result.splice(0, result.length);
+        } else if (genreCount >= 1 && remain.length < 12) {
+          let pageArray = remain.splice(0, remain.length);
           let newCopy = [
             ...useGenreStore.getState().genreArtistList,
             ...pageArray,
           ];
 
           set({
-            genreArtistLoadCount: (genreArtistLoadCount += 1),
+            genreArtistLoadCount: (genreCount += 1),
             genreArtistList: newCopy,
           });
         }

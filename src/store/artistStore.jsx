@@ -17,7 +17,6 @@ export const useArtistStore = create((set, get) => {
     artistVideoList: [],
     actions: {
       getArtistName: () => {
-        console.log("getArtistName");
         useMenuStore.setState({ pageName: "Artist" });
         let loadCount = useArtistStore.getState().loadCount;
         let firstSplice;

@@ -13,7 +13,7 @@ const Introduce = () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(sectionRef.current, { translateX: 50 });
     gsap.to(sectionRef.current, {
-      translateX: -sectionRef.current.offsetWidth + 50,
+      translateX: -sectionRef.current.offsetWidth,
       ease: "none",
       scrollTrigger: {
         trigger: ".section2-2",
