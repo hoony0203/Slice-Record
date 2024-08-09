@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 const Section6 = () => {
   const imgRef = useRef([]);
-  const sectionRef = useRef(null);
+  const section6Ref = useRef(null);
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline({
@@ -15,23 +15,28 @@ const Section6 = () => {
         trigger: ".imgTrigger",
         start: "top 80%",
         end: "bottom 20%",
-        scrub: true,
+        scrub: 2,
       },
     });
     gsap.from(imgRef.current, {
-      opacity: 0.5,
+      x: -400,
+      opacity: 0.1,
     }),
       tl.add(
-        gsap.to(imgRef.current, {
-          duration: 5,
-          x: 200,
-          stagger: 0.2,
-          opacity: 1,
-        })
+        gsap.to(
+          imgRef.current,
+          {
+            duration: 2000,
+            x: 200,
+            stagger: 0.2,
+            opacity: 1,
+          },
+          "+=1000"
+        )
       );
   });
   return (
-    <section ref={sectionRef} className="section-6">
+    <section ref={section6Ref} className="section-6">
       <div className="container-grid">
         <div className="title imgTrigger">
           <h2 className="txt-up txt-black">
@@ -43,6 +48,8 @@ const Section6 = () => {
           <p className="txt-up txt-black">dddddddddd</p>
         </div>
         <div className="grid-holder"></div>
+        <div className="grid-holder2"></div>
+
         {artistInfo.map((artist, i) => {
           return (
             <div

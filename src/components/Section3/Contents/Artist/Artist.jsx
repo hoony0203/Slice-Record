@@ -10,16 +10,17 @@ const Artist = () => {
     <>
       {artistList.map((item, i) => {
         return (
-          <div
-            className="thumb"
-            key={i}
-            onClick={() => setArtistPage(item.name, item.playlistId)}>
-            <label className="thumb-label">
-              {item.name}
-              <span className="label-point"> {item.genre} </span>
-            </label>
-            <div className="thumb-overlay"></div>
-            <img src={item.imgUrl} />
+          <div className="thumb-wrap" key={i}>
+            <div
+              className="thumb"
+              onClick={() => setArtistPage(item.name, item.playlistId)}>
+              <label className="thumb-label">
+                {item.name}
+                <span className="label-point"> {item.genre} </span>
+              </label>
+              <div className="thumb-overlay"></div>
+              <img src={item.imgUrl} />
+            </div>
           </div>
         );
       })}

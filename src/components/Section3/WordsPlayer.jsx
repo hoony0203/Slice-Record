@@ -3,17 +3,16 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Turntable2 from "./Turntable2";
-import Player from "../Section3/Player/Player";
+import Player from "./Player/Player";
 import Menu from "./Menu";
 import { usePlayerStore } from "../../store/playerStore";
 
-const Section2 = () => {
+const WordsPlayer = () => {
   const listOn = usePlayerStore((state) => state.listOn);
 
   let wordRefs = useRef([]);
-
-  let phrase = `Explore our services, customized by favorite genre and artists.
-Declared Genre and Artist category are give you more convenience and Youtube accessibility.`;
+  let container = useRef(null);
+  let phrase = `Explore our services, customized by favorite genre and artists. Declared Genre and Artist category are give you more convenience and Youtube accessibility.`;
 
   let splitWords = (phrase) => {
     let body = [];
@@ -21,7 +20,6 @@ Declared Genre and Artist category are give you more convenience and Youtube acc
       const letters = splitLetters(word);
       body.push(<p key={word + "_" + i}>{letters}</p>);
     });
-
     return body;
   };
 
@@ -43,21 +41,20 @@ Declared Genre and Artist category are give you more convenience and Youtube acc
   };
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
     gsap.from(wordRefs.current, { opacity: 0.3 });
-    gsap.to(wordRefs.current, {
-      scrollTrigger: {
-        trigger: ".split-word",
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: true,
-        // markers: true,
-      },
-      opacity: 1,
-      ease: "slow",
-      duration: 5,
-      stagger: 1,
-      // invalidateOnRefresh: true,
+
+    ScrollTrigger.create({
+      trigger: ".split-word",
+      start: "top 10%",
+      end: "bottom 100%",
+      animation: gsap.to(wordRefs.current, {
+        ease: "slow",
+        opacity: 1,
+        duration: 10,
+        stagger: 0.1,
+      }),
+      scrub: 1,
+      invalidateOnRefresh: true,
     });
   });
 
@@ -65,7 +62,7 @@ Declared Genre and Artist category are give you more convenience and Youtube acc
     <>
       <section className="section-3">
         <div className="container grid ">
-          <h1 className="title txt-black txt-up split-word">
+          <h1 ref={container} className="title txt-black txt-up split-word">
             {splitWords(phrase)}
           </h1>
           <Turntable2 />
@@ -78,4 +75,4 @@ Declared Genre and Artist category are give you more convenience and Youtube acc
   );
 };
 
-export default Section2;
+export default WordsPlayer;

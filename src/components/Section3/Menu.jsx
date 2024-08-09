@@ -1,23 +1,31 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useMenuStore } from "../../store/store";
 import { useArtistStore } from "../../store/artistStore";
 import { useGenreStore } from "../../store/genreStore";
-import { useEffect } from "react";
 import { useShallow } from "zustand/react/shallow";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 const Menu = () => {
-  const [menu, page] = useMenuStore(
-    useShallow((state) => [state.menu, state.page])
+  const [menu, page, isContact] = useMenuStore(
+    useShallow((state) => [state.menu, state.page, state.isContact])
   );
-  const setPage = useMenuStore((state) => state.actions.setPage);
+  const { setPage, goContact } = useMenuStore((state) => state.actions);
   const loadCount = useArtistStore((state) => state.loadCount);
   const getArtistName = useArtistStore((state) => state.actions.getArtistName);
   const genreArtistLoadCount = useGenreStore(
     (state) => state.genreArtistLoadCount
   );
   const getGenreName = useGenreStore((state) => state.actions.getGenreName);
-  const navigate = useNavigate();
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+    if (isContact == true) {
+      console.log("test");
+      gsap.to(window, { scrollTo: 2500 });
+      useMenuStore.setState({ isContact: false });
+    }
+  }, [isContact]);
 
   return (
     <div className="menu">
@@ -30,6 +38,8 @@ const Menu = () => {
                 ? getGenreName
                 : i == 1 && loadCount == 0
                 ? getArtistName
+                : i == 3
+                ? goContact
                 : null
             }
             className="flex menu-item"

@@ -4,36 +4,39 @@ import { stack } from "../../data/stackSkills";
 const Colorstack = () => {
   return (
     <div className="color-stack grid">
-      <div className="grayish-orange">
-        <div className="front flex">
-          <i className="fa-solid fa-music fa-3x"></i>
+      <div className="card-wrap">
+        <div className="card grayish-orange">
+          <div className="front flex">
+            <i className="fa-solid fa-music fa-3x"></i>
 
-          <label>main-bg-color</label>
-        </div>
-        <div className="back flex">
-          <label>
-            <p>
-              <span>light grayish-orange</span>
-              <br />
-              <span>#e7ddcf</span>
-            </p>
-          </label>
+            <label>main-bg-color</label>
+          </div>
+          <div className="back flex">
+            <label>
+              <p>
+                <span>light grayish-orange</span>
+                <br />
+                <span>#e7ddcf</span>
+              </p>
+            </label>
+          </div>
         </div>
       </div>
-
-      <div className="red-Tangelo">
-        <div className="front flex">
-          <i className="fa-solid fa-music fa-3x"></i>
-          <label>main-point-color</label>
-        </div>
-        <div className="back flex">
-          <label>
-            <p>
-              <span>Vivid Red-Tangelo</span>
-              <br />
-              #dd6013
-            </p>
-          </label>
+      <div className="card-wrap">
+        <div className="card red-Tangelo">
+          <div className="front flex">
+            <i className="fa-solid fa-music fa-3x"></i>
+            <label>main-point-color</label>
+          </div>
+          <div className="back flex">
+            <label>
+              <p>
+                <span>Vivid Red-Tangelo</span>
+                <br />
+                #dd6013
+              </p>
+            </label>
+          </div>
         </div>
       </div>
       <div className="main-fonts">

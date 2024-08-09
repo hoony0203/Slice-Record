@@ -10,10 +10,13 @@ const GenreArtists = () => {
 
   return (
     <>
-      <button onClick={resetArtistName}>back</button>
+      <button className="genre-backBtn" onClick={resetArtistName}>
+        <label>back</label>
+        <i className="fa-solid fa-backward-step fa-5x"></i>
+      </button>
       {genreArtistList.map((item, i) => {
         return (
-          <div key={i}>
+          <div className="thumb-wrap" key={i}>
             <div
               className="thumb"
               onClick={() => setArtistPage(item.name, item.playlistId)}>

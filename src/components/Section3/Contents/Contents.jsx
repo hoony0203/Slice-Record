@@ -7,18 +7,24 @@ import Genre from "./Genre/Genre";
 import GenreArtists from "./Genre/GenreArtists";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import DefaultImg from "./DefaultImg";
 
 const Contents = () => {
   const [menu, page, pageName] = useMenuStore(
     useShallow((state) => [state.menu, state.page, state.pageName])
   );
-  const artistList = useArtistStore((state) => state.artistList);
+  const { defaultImg, artistList } = useArtistStore();
+
   const { genreName, genreArtistList, selectedGenre } = useGenreStore();
   const getArtistName = useArtistStore((state) => state.actions.getArtistName);
   const { getGenreArtistName } = useGenreStore((state) => state.actions);
   const listRef = useRef(null);
   const [target, inView] = useInView();
   const [target2, inView2] = useInView();
+
+  useEffect(() => {
+    console.log(defaultImg);
+  }, [defaultImg]);
 
   useEffect(() => {
     if (selectedGenre != "") {
@@ -42,23 +48,31 @@ const Contents = () => {
     <div data-lenis-prevent ref={listRef} className="content-select-list">
       {menu[page - 1] == "artist" ? (
         <>
-          <Artist />
-          <div ref={target}></div>
+          {artistList.length < 1 ? (
+            <DefaultImg />
+          ) : (
+            <>
+              <Artist />
+              <div ref={target}></div>
+            </>
+          )}
         </>
       ) : menu[page - 1] == "genre" ? (
         <>
-          {genreArtistList.length >= 1 ? (
+          {genreArtistList.length < 1 ? (
+            <>{genreName.length < 1 ? <DefaultImg /> : <Genre />}</>
+          ) : (
             <>
               <GenreArtists />
               <div ref={target2}></div>
             </>
-          ) : (
-            <>
-              <Genre />
-            </>
           )}
         </>
-      ) : null}
+      ) : (
+        <>
+          <DefaultImg />
+        </>
+      )}
     </div>
   );
 };

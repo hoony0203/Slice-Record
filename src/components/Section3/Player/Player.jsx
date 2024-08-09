@@ -42,7 +42,8 @@ const Section3 = () => {
       <section className={`section-4 ${opacity}`}>
         <div className="section-4-title">
           <button className="backBtn" onClick={resetVideoList}>
-            Back
+            <i className="fa-solid fa-backward-step fa-2x"></i>
+            <label>back</label>
           </button>
           <p className="txt-black txt-up txt-light-sub">
             {pageName} / {playContent}

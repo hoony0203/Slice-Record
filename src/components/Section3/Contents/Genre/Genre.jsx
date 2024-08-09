@@ -10,16 +10,15 @@ const Genre = () => {
     <>
       {genreName.map((genre, i) => {
         return (
-          <div
-            className="thumb"
-            key={i}
-            onClick={() => getGenreArtistName(genre)}>
-            <label className="thumb-label">{genre}</label>
-            <div className="thumb-overlay"></div>
-            <img
-              src={`src/assets/img/genreImg/${genre}.jpg`}
-              alt={`${genre}`}
-            />
+          <div className="thumb-wrap" key={i}>
+            <div className="thumb" onClick={() => getGenreArtistName(genre)}>
+              <label className="thumb-label">{genre}</label>
+              <div className="thumb-overlay"></div>
+              <img
+                src={`src/assets/img/genreImg/${genre}.jpg`}
+                alt={`${genre}`}
+              />
+            </div>
           </div>
         );
       })}

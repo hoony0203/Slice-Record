@@ -7,7 +7,10 @@ import { usePlayerStore } from "./playerStore";
 
 export const useArtistStore = create((set, get) => {
   let array = new Array();
+  let arrayCopy;
+
   getArtistInfo(array);
+  arrayCopy = [...array];
   return {
     artist: artistInfo,
     loadCount: 0,
@@ -22,21 +25,25 @@ export const useArtistStore = create((set, get) => {
         let firstSplice;
         const usualCount = 12;
         if (loadCount == 0) {
-          firstSplice = array.splice(0, usualCount);
+          console.log("artist1");
+          console.log(array);
+          firstSplice = arrayCopy.splice(0, usualCount);
           let copy = [...firstSplice];
           set({
             loadCount: (loadCount += 1),
             artistList: copy,
           });
-        } else if (loadCount >= 1 && array.length >= 12) {
-          let pageArray = array.splice(0, usualCount);
+        } else if (loadCount >= 1 && arrayCopy.length >= 12) {
+          console.log("artist2");
+          let pageArray = arrayCopy.splice(0, usualCount);
           let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
           set({
             loadCount: (loadCount += 1),
             artistList: newCopy,
           });
-        } else if (loadCount >= 1 && array.length < 12) {
-          let pageArray = array.splice(0, array.length);
+        } else if (loadCount >= 1 && arrayCopy.length < 12) {
+          console.log("artist3");
+          let pageArray = arrayCopy.splice(0, arrayCopy.length);
           let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
           set({
             loadCount: (loadCount += 1),

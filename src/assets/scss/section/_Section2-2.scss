@@ -39,7 +39,7 @@
   font-weight: 700;
 }
 
-@mixin colors($border-color, $color, $box-shadow-color) {
+@mixin colors($border-color, $color) {
   border: 3px solid $border-color;
   box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
   display: inline-block;
@@ -49,17 +49,13 @@
   transform: perspective(600px) rotateX(0deg);
   transition: all 0.7s ease;
   transform-style: preserve-3d;
-  &:hover {
-    transform: perspective(600px) rotateX(180deg);
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3),
-      -10px -10px 10px $box-shadow-color;
-  }
 }
 
 @mixin front($bg-color) {
-  height: 99%;
+  height: 100%;
   position: relative;
   background-color: $bg-color;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   justify-content: center;
   align-items: center;
@@ -74,10 +70,11 @@
 
 @mixin back($bg-color) {
   position: relative;
-  height: 99%;
+  height: 100%;
   bottom: 25rem;
   background-color: $bg-color;
   transform: rotateX(180deg);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   justify-content: center;
   align-items: center;
@@ -96,11 +93,8 @@
   }
 }
 .grayish-orange {
-  @include colors(
-    var(--cl-text-light-sub),
-    var(--cl-dark-bg),
-    var(--cl-main-bg)
-  );
+  @include colors(var(--cl-text-light-sub), var(--cl-dark-bg));
+
   .front {
     @include front(var(--cl-main-bg));
   }
@@ -110,12 +104,33 @@
 }
 
 .red-Tangelo {
-  @include colors(none, var(--cl-dark-bg), var(--cl-point-orange));
+  @include colors(none, var(--cl-dark-bg));
+  .card-wrap:hover .red-Tangelo {
+    transform: perspective(600px) rotateX(180deg);
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3), -10px -10px 10px,
+      var(--cl-point-orange);
+  }
   .front {
     @include front(var(--cl-point-orange));
   }
   .back {
     @include back(var(--cl-point-orange));
+  }
+}
+
+@mixin card-hover($color) {
+  transform: perspective(600px) rotateX(180deg);
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3), -10px -10px 10px $color;
+}
+
+.card-wrap {
+  width: 90%;
+  height: 90%;
+  &:hover .grayish-orange {
+    @include card-hover(var(--cl-main-bg));
+  }
+  &:hover .red-Tangelo {
+    @include card-hover(var(--cl-point-orange));
   }
 }
 
