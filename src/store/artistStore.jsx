@@ -5,11 +5,14 @@ import axios from "axios";
 import { useMenuStore } from "./store";
 import { usePlayerStore } from "./playerStore";
 
-export const useArtistStore = create((set, get) => {
-  let array = new Array();
-  let arrayCopy;
-
+let array = new Array();
+let arrayfunction = () => {
   getArtistInfo(array);
+};
+
+export const useArtistStore = create((set, get) => {
+  arrayfunction();
+  let arrayCopy;
   arrayCopy = [...array];
   return {
     artist: artistInfo,
@@ -26,7 +29,6 @@ export const useArtistStore = create((set, get) => {
         const usualCount = 12;
         if (loadCount == 0) {
           console.log("artist1");
-          console.log(array);
           firstSplice = arrayCopy.splice(0, usualCount);
           let copy = [...firstSplice];
           set({

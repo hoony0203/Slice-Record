@@ -139,6 +139,19 @@
     @extend %font-stack-h2;
   }
 }
+.f-400 {
+  margin-top: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
+}
+.f-700 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.f-900 {
+  font-size: 3rem;
+  font-weight: 900;
+}
 
 .stack {
   grid-row: 2/3;
@@ -257,11 +270,102 @@
 .profile-script {
   padding: 5rem 1rem 0 1rem;
   font-size: 1.3rem;
-  max-width: 30rem;
+  max-width: 35rem;
   h2 {
-    font-weight: 700;
+    font-weight: 900;
+    margin-left: 3rem;
     margin-bottom: 3rem;
   }
+}
+
+.profile-list {
+  padding: 0;
+  margin: 50px auto;
+  text-align: center;
+}
+.profile-list li {
+  display: inline-block;
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+  padding: 20px 10px 20px;
+  position: relative;
+  vertical-align: top;
+  margin-bottom: 2rem;
+  background: #262a2b;
+  border: 1px solid #252727;
+  text-align: left;
+  h3 {
+    font-size: 4.5rem;
+    margin: 0;
+    position: absolute;
+    opacity: 0.2;
+    bottom: 3rem;
+    right: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  h4 {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-size: 20px;
+    color: #b7b7b7;
+  }
   p {
+    max-width: 23rem;
+    font-weight: 700;
+    opacity: 0.5;
+    font-size: 16px;
+    line-height: 18px;
+    color: #b7b7b7;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover p {
+    opacity: 1;
+  }
+  &:hover h3 {
+    opacity: 0.6;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: #fff;
+    transform: skew(4deg, 4deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  &:nth-child(1):before {
+    background: #c9ffbf;
+    background: -webkit-linear-gradient(to right, #ffafbd, #c9ffbf);
+    background: linear-gradient(to right, #ffafbd, #c9ffbf);
+  }
+  &:nth-child(2):before {
+    background: #f2709c;
+    background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
+    background: linear-gradient(to right, #ff9472, #f2709c);
+  }
+  &:nth-child(3):before {
+    background: #c21500;
+    background: -webkit-linear-gradient(to right, #ffc500, #c21500);
+    background: linear-gradient(to right, #ffc500, #c21500);
+  }
+  &:nth-child(4):before {
+    background: #fc354c;
+    background: -webkit-linear-gradient(to right, #0abfbc, #fc354c);
+    background: linear-gradient(to right, #0abfbc, #fc354c);
   }
 }

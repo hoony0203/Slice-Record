@@ -2,9 +2,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import Skills from "./Skills";
-import About from "./About";
+import { lazy } from "react";
 import Colorstack from "./Colorstack";
+const Skills = lazy(() => import("./Skills"));
+const About = lazy(() => import("./About"));
 
 const Introduce = () => {
   const sectionRef = useRef(null);

@@ -16,9 +16,7 @@ export const useMenuStore = create((set, get) => {
         if (item != "genre") {
           useGenreStore.setState({ genreName: [] });
         }
-        // else if (item != "artist") {
-        //   useArtistStore.setState({ artistList: [], loadCount: 0 });
-        // }
+
         set({
           pageName: item,
           page: i + 1,

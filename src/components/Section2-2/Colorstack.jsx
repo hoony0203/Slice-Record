@@ -41,8 +41,9 @@ const Colorstack = () => {
       </div>
       <div className="main-fonts">
         <h2>Main fonts</h2>
-        <p>Aa 012345</p> <label>123</label>
-        <p>Aa 012345</p> <label>123</label>
+        <p className="f-400">AaBbCc 012345</p> <label>Pretendard 400</label>
+        <p className="f-700">AaBbCc 012345</p> <label>Pretendard 700</label>
+        <p className="f-900">AaBbCc 012345</p> <label>Pretendard 900</label>
       </div>
       <div className="stack flex">
         <h2>Using Stacks</h2>

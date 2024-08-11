@@ -23,10 +23,6 @@ const Contents = () => {
   const [target2, inView2] = useInView();
 
   useEffect(() => {
-    console.log(defaultImg);
-  }, [defaultImg]);
-
-  useEffect(() => {
     if (selectedGenre != "") {
       listRef.current.scrollTop = 0;
     }

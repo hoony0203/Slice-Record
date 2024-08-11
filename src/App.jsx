@@ -1,16 +1,22 @@
 import { useEffect, lazy } from "react";
 
-import Section1 from "./components/Section1/Section1";
-import Section2 from "./components/Section2/Section2";
-import Introduce from "./components/Section2-2/Introduce";
-import WordsPlayer from "./components/Section3/WordsPlayer";
-import Section6 from "./components/Section6/Section6";
+const Section1 = lazy(() => import("./components/Section1/Section1"));
+const Section2 = lazy(() => import("./components/Section2/Section2"));
+const Introduce = lazy(() => import("./components/Section2-2/Introduce"));
+const WordsPlayer = lazy(() => import("./components/Section3/WordsPlayer"));
+const Section6 = lazy(() => import("./components/Section6/Section6"));
+// import Section1 from "./components/Section1/Section1";
+// import Section2 from "./components/Section2/Section2";
+// import Introduce from "./components/Section2-2/Introduce";
+// import WordsPlayer from "./components/Section3/WordsPlayer";
+// import Section6 from "./components/Section6/Section6";
 
 import lenis from "./util/lenis";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useInView } from "react-intersection-observer";
 
 const App = () => {
   useEffect(() => {
@@ -45,6 +51,20 @@ const App = () => {
     });
   });
 
+  const [target, inView] = useInView();
+  const [target2, inView2] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      console.log("111111");
+    }
+  }, [inView]);
+  useEffect(() => {
+    if (inView2) {
+      console.log("22222");
+    }
+  }, [inView2]);
+
   return (
     <div className="">
       <header id="header" role="banner"></header>
@@ -57,6 +77,7 @@ const App = () => {
               <img src="src/assets/img/record2.png" alt="" />
             </div>
           </div>
+          <div ref={target2}></div>
           <Section2 />
           <Introduce />
           <WordsPlayer />

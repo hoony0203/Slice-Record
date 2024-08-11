@@ -1,5 +1,5 @@
 import React from "react";
-
+import { profileScript } from "../../data/stackSkills";
 const About = () => {
   return (
     <div className="about flex">
@@ -28,8 +28,23 @@ const About = () => {
         </div>
       </div>
       <div className="profile-script">
-        <h2>안녕하세요, 프론트엔드 개발자 임창훈입니다.</h2>
-        <p>최적화</p>
+        <h2>
+          안녕하세요, <br />
+          프론트엔드 개발자 임창훈입니다.
+        </h2>
+        <div className="profile-list-wrap">
+          <ul className="profile-list">
+            {profileScript.map((item, i) => {
+              return (
+                <li key={i}>
+                  <h3>{item.name}</h3>
+                  <h4>{item.subName}</h4>
+                  <p>{item.script}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );
