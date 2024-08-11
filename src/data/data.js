@@ -1,3 +1,38 @@
+const musicQuotes = [
+  {
+    quote: `One good thing about music, when it hits you, you feel no pain.`,
+    artist: "Bob Marley",
+  },
+  {
+    quote: `I think music in itself is healing.`,
+    artist: "Billy Joel",
+  },
+  {
+    quote: `Music doesn't lie.`,
+    artist: "Jimi Hendrix",
+  },
+  {
+    quote: `I was born with music inside me. Music was one of my parts. `,
+    artist: "Ray Charles",
+  },
+  {
+    quote: `I don't make music for eyes. I make music for ears.`,
+    artist: "Adele",
+  },
+  {
+    quote: `I don't know anything about music. In my line you don't have to.`,
+    artist: "Elvis Presley",
+  },
+  {
+    quote: `Music is only love looking for words.`,
+    artist: "Lawrence Durrell",
+  },
+  {
+    quote: `True music must repeat the thought and inspirations of the people and the time.`,
+    artist: "George Gershwin",
+  },
+];
+
 const artistInfo = [
   {
     name: "Yoasobi",
@@ -562,4 +597,4 @@ const artistInfo = [
   },
 ];
 
-export default artistInfo;
+export { artistInfo, musicQuotes };

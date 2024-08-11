@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { lazy } from "react";
 import Colorstack from "./Colorstack";
+import { Suspense } from "react";
 const Skills = lazy(() => import("./Skills"));
 const About = lazy(() => import("./About"));
 
@@ -24,21 +25,28 @@ const Introduce = () => {
         pin: ".section2-2",
         triggerHook: 0,
         pinSpacing: false,
+        invalidateOnRefresh: true,
       },
     });
   });
   return (
     <section ref={sectionRef} className="section2-2">
       <div className="horizon-item">
-        <Colorstack />
+        <Suspense>
+          <Colorstack />
+        </Suspense>
       </div>
       <div className="horizon-item">
         <div className="skills flex">
-          <Skills />
+          <Suspense>
+            <Skills />
+          </Suspense>
         </div>
       </div>
       <div className="horizon-item">
-        <About />
+        <Suspense>
+          <About />
+        </Suspense>
       </div>
     </section>
   );

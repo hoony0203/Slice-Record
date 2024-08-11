@@ -17,6 +17,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
+import { Suspense } from "react";
+import Section5 from "./components/Section5/Section5";
 
 const App = () => {
   useEffect(() => {
@@ -33,6 +36,7 @@ const App = () => {
         end: "bottom 20%",
         // scrub: true,
         // markers: true,
+        pin: true,
       },
       rotateY: "+=360",
       duration: 5,
@@ -50,18 +54,26 @@ const App = () => {
       },
     });
   });
-
-  const [target, inView] = useInView();
+  const [introduce, setIntroduce] = useState(false);
+  const [wp, setWp] = useState(false);
+  const [s6, sets6] = useState(false);
+  const [target4, inView4] = useInView();
+  const [target3, inView3] = useInView();
   const [target2, inView2] = useInView();
 
   useEffect(() => {
-    if (inView) {
-      console.log("111111");
+    if (inView4) {
+      sets6(true);
     }
-  }, [inView]);
+  }, [inView4]);
+  useEffect(() => {
+    if (inView3) {
+      setWp(true);
+    }
+  }, [inView3]);
   useEffect(() => {
     if (inView2) {
-      console.log("22222");
+      setIntroduce(true);
     }
   }, [inView2]);
 
@@ -77,12 +89,17 @@ const App = () => {
               <img src="src/assets/img/record2.png" alt="" />
             </div>
           </div>
-          <div ref={target2}></div>
           <Section2 />
-          <Introduce />
-          <WordsPlayer />
-          {/* <Section5 /> */}
-          <Section6 />
+          <div ref={target2}></div>
+
+          {introduce == true ? <Introduce /> : null}
+
+          <div ref={target3}></div>
+          {wp == true ? <WordsPlayer /> : null}
+
+          <div ref={target4}></div>
+          <Section5 />
+          {s6 == true ? <Section6 /> : null}
         </div>
       </main>
     </div>

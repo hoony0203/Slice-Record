@@ -105,11 +105,7 @@
 
 .red-Tangelo {
   @include colors(none, var(--cl-dark-bg));
-  .card-wrap:hover .red-Tangelo {
-    transform: perspective(600px) rotateX(180deg);
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3), -10px -10px 10px,
-      var(--cl-point-orange);
-  }
+
   .front {
     @include front(var(--cl-point-orange));
   }
@@ -284,6 +280,7 @@
   text-align: center;
 }
 .profile-list li {
+  cursor: pointer;
   display: inline-block;
   width: 100%;
   min-width: 200px;
@@ -367,5 +364,18 @@
     background: #fc354c;
     background: -webkit-linear-gradient(to right, #0abfbc, #fc354c);
     background: linear-gradient(to right, #0abfbc, #fc354c);
+  }
+}
+@media screen and (max-width: 800px) {
+  .grayish-orange {
+    .back {
+      bottom: 28.6rem;
+    }
+  }
+
+  .red-Tangelo {
+    .back {
+      bottom: 28.6rem;
+    }
   }
 }

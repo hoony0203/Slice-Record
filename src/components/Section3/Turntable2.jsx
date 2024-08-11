@@ -28,7 +28,6 @@ const Turntable2 = () => {
         <div className="turn2-heading">
           <p className="txt-up txt-black">
             {selectedGenre == "" ? pageName : `${pageName} / ${selectedGenre}`}
-            {/* {page == 0 ? pageName : menu[page - 1]} */}
           </p>
         </div>
         <div className="turn2-nav-control flex">

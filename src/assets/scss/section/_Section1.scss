@@ -122,3 +122,11 @@
     height: 500px;
   }
 }
+@media screen and (max-width: 768px) {
+  .section-1 {
+    .title {
+      grid-column: unset;
+      font-size: 10vh;
+    }
+  }
+}

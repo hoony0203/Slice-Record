@@ -1,20 +1,48 @@
+import { useGSAP } from "@gsap/react";
 import ImgItem from "./ImgItem";
+import { artistInfo } from "./../../data/data";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const Section5 = () => {
+  let galleryRef = useRef(null);
+  let imgsRef = useRef([]);
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sliderWidth = galleryRef.current.offsetWidth;
+
+    let images = gsap.utils.toArray(".imgs");
+
+    images.forEach((item) => {
+      gsap.to(item, {
+        x: "-=" + Number(sliderWidth / 2),
+        duration: 30,
+        repeat: -1,
+        ease: "none",
+      });
+    });
+  });
+
   return (
     <section className="section-5">
-      <div className="container-grid">
-        <div className="title">
-          <h2 className="txt-up txt-black">
-            <span>Award-</span> Winning Excellence, Trusted <br />
-            by Industry <div className="txt-green">Leaders</div>
-          </h2>
-        </div>
-        <div className="sub-title">
-          <p className="txt-up txt-black"></p>
-        </div>
-        <div className="grid-holder"></div>
-        <ImgItem />
+      <div ref={galleryRef} className="gallery">
+        {artistInfo.map((artist, i) => {
+          return (
+            <div
+              ref={(el) => (imgsRef.current[i] = el)}
+              className="imgs"
+              key={i}>
+              <a
+                href={`https://www.youtube.com/channel/${artist.channelId}`}
+                target="_blank"
+                rel="noopener noreferrer">
+                <img src={artist.imgUrl} alt="" width="500px" loading="lazy" />
+              </a>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

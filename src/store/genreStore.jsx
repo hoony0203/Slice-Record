@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import artistInfo from "../data/data";
+import { artistInfo } from "../data/data";
 import getArtistInfo from "../data/artistInfo";
 import { useMenuStore } from "./store";
 

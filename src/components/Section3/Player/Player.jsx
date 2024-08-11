@@ -1,12 +1,13 @@
-import React from "react";
-import ArtistVideoList from "./ArtistVideoList";
+import { lazy } from "react";
+const ArtistVideoList = lazy(() => import("./ArtistVideoList"));
+const VideoPlay = lazy(() => import("./VideoPlay"));
 import { useMenuStore } from "../../../store/store";
 import { usePlayerStore } from "../../../store/playerStore";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
-import VideoPlay from "./VideoPlay";
 import { useShallow } from "zustand/react/shallow";
+import { Suspense } from "react";
 
 const Section3 = () => {
   const pageName = useMenuStore((state) => state.pageName);
@@ -49,7 +50,11 @@ const Section3 = () => {
             {pageName} / {playContent}
           </p>
         </div>
-        {playerMode ? <VideoPlay /> : null}
+        {playerMode ? (
+          <Suspense>
+            <VideoPlay />
+          </Suspense>
+        ) : null}
         <div
           data-lenis-prevent
           ref={videoListScrollRef}

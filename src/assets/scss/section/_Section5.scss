@@ -1,76 +1,23 @@
-// .section-5 {
-//   position: relative;
-//   z-index: 2;
-//   width: 1920px;
-//   padding: 5rem 2.5rem 5rem 2.5rem;
-
-//   // .container-grid {
-//   //   display: grid;
-//   //   grid-template-columns: repeat(6, 1fr);
-//   //   column-gap: 0;
-//   // }
-//   .title {
-//     border: 5px solid grey;
-//     padding-top: unset;
-//     grid-column: 1 / 4;
-//     grid-row: 1 / 4;
-//     margin-top: 2.2rem;
-//     position: relative;
-//     max-width: 40rem;
-//     h2 {
-//       border: 5px solid blue;
-//       padding-top: 0.1rem;
-//       font-size: 5.5rem;
-//       line-height: 1em;
-//     }
-//   }
-// }
-// // .sub-title {
-// //   border: 5px solid red;
-// //   max-width: 50rem;
-// //   grid-column: 4 / 6;
-// //   grid-row: 1 / 2;
-// //   margin-top: 1.25rem;
-// //   p {
-// //     max-width: 13rem;
-// //     font-size: 0.85rem;
-// //     line-height: 1.2rem;
-// //   }
-// // }
-
-// // .grid-holder {
-// //   border: 5px solid yellow;
-// //   grid-column: 3 / 5;
-// //   grid-row: 2 / 3;
-// //   width: 100%;
-// //   height: 0;
-// //   padding-top: 70%;
-// // }
-
-// .map {
-//   border: solid 0.2rem #3d3d3d;
-//   padding-left: 6.9rem;
-//   padding-right: 5.9rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin: -0.1rem;
-//   background: url(../../img/turntable.png) no-repeat center / contain;
-// }
-
-// .img-item {
-//   aspect-ratio: 1 / 1;
-//   width: 500px;
-//   height: 5g00px;
-//   border: solid 0.2rem gray;
-//   margin: -0.1rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// @media screen and (max-width: 1520px) {
-//   .section-5 {
-//     margin-top: 45rem;
-//   }
-// }
+.section-5 {
+  position: relative;
+  z-index: 2;
+  width: 1920px;
+  padding: 5rem 2.5rem 5rem 2.5rem;
+  .gallery {
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: visible;
+    max-width: auto;
+    width: 800vh;
+    // padding-bottom: 100vh;
+  }
+  .imgs {
+    cursor: pointer;
+    width: 500px;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

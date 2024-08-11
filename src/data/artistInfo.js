@@ -1,4 +1,4 @@
-import artistInfo from "../data/data";
+import { artistInfo } from "../data/data";
 
 let getArtistInfo = (array) => {
   for (let i = 0; i < artistInfo.length; i++) {
