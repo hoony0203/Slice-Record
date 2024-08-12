@@ -9,8 +9,8 @@ const Section2 = () => {
 
   return (
     <>
-      <section className="section-2 record-point">
-        <h2 className="title txt-black txt-up flex">
+      <section className="section-2">
+        <h2 className="title txt-black txt-up flex .record-point">
           <div className="quote">
             <span>{value.quote}</span>
           </div>
