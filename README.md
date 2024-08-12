@@ -2,7 +2,7 @@
 
 ## 완성작 보기
 
-미리보기 :
+미리보기 : https://hoony0203.github.io/Slice-Record/
 
 ## 사용스택
 
