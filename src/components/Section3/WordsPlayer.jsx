@@ -43,24 +43,22 @@ const WordsPlayer = () => {
   };
 
   useGSAP(() => {
-    gsap.from(refs.current, { opacity: 0.3 });
+    gsap.set(refs.current, { opacity: 0.3 });
   });
 
   useGSAP(() => {
     gsap.to(refs.current, {
       scrollTrigger: {
-        trigger: ".split-word",
+        trigger: ".section-3",
         start: "top 10%",
         end: "bottom 100%",
         scrub: 1,
-        // markers: true,
         invalidateOnRefresh: true,
-        // toggleActions: "restart reverse resume reset",
       },
       opacity: 1,
       ease: "slow",
       duration: 50,
-      stagger: 1,
+      stagger: 0.5,
     });
   });
 
