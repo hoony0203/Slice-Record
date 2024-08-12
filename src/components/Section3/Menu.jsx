@@ -21,7 +21,6 @@ const Menu = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollToPlugin);
     if (isContact == true) {
-      console.log("test");
       gsap.to(window, { scrollTo: 2500 });
       useMenuStore.setState({ isContact: false });
     }

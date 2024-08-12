@@ -18,10 +18,10 @@ const DefaultImg = () => {
       <img
         src={
           menu[page - 1] == "genre"
-            ? `/src/assets/img/genreTurntable.png`
+            ? `./img/genreTurntable.png`
             : menu[page - 1] == "artist"
-            ? `/src/assets/img/artistTurntable.png`
-            : `/src/assets/img/turntableDefault.png`
+            ? `./img/artistTurntable.png`
+            : `./img/turntableDefault.png`
         }
         alt="defaultImg"
       />

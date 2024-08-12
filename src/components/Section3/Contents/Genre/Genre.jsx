@@ -14,10 +14,7 @@ const Genre = () => {
             <div className="thumb" onClick={() => getGenreArtistName(genre)}>
               <label className="thumb-label">{genre}</label>
               <div className="thumb-overlay"></div>
-              <img
-                src={`src/assets/img/genreImg/${genre}.jpg`}
-                alt={`${genre}`}
-              />
+              <img src={`./img/genreImg/${genre}.jpg`} alt={`${genre}`} />
             </div>
           </div>
         );

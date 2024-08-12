@@ -44,23 +44,30 @@ const App = () => {
       ease: "none",
     });
 
-    ScrollTrigger.create({
-      start: "top top",
-      end: 99999,
-      pin: true,
-      // markers: true,
-      onUpdate: (self) => {
-        self.direction === -1 ? record.reverse() : record.play();
-      },
-    });
+    // ScrollTrigger.create({
+    //   start: "top top",
+    //   end: 99999,
+    //   pin: true,
+    //   // markers: true,
+    //   onUpdate: (self) => {
+    //     self.direction === -1 ? record.reverse() : record.play();
+    //   },
+    // });
   });
   const [introduce, setIntroduce] = useState(false);
   const [wp, setWp] = useState(false);
+  const [s5, sets5] = useState(false);
   const [s6, sets6] = useState(false);
+  const [target5, inView5] = useInView();
   const [target4, inView4] = useInView();
   const [target3, inView3] = useInView();
   const [target2, inView2] = useInView();
 
+  useEffect(() => {
+    if (inView5) {
+      sets5(true);
+    }
+  }, [inView5]);
   useEffect(() => {
     if (inView4) {
       sets6(true);
@@ -86,7 +93,7 @@ const App = () => {
           <Section1 />
           <div className="turntable1">
             <div ref={circle} className="record">
-              <img src="src/assets/img/record2.png" alt="" />
+              <img src="./img/record2.png" alt="" />
             </div>
           </div>
           <Section2 />
@@ -97,8 +104,9 @@ const App = () => {
           <div ref={target3}></div>
           {wp == true ? <WordsPlayer /> : null}
 
+          <div ref={target5}></div>
+          {s5 == true ? <Section5 /> : null}
           <div ref={target4}></div>
-          <Section5 />
           {s6 == true ? <Section6 /> : null}
         </div>
       </main>

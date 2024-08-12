@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="about flex">
       <div className="profile">
-        <img src="src/assets/img/limChangHoon.jpg" alt="profileImg" />
+        <img src="./img/limChangHoon.jpg" alt="profileImg" />
         <div className="profile-icons flex">
           <div className="profile-github flex">
             <i className="fa-brands fa-github fa-3x"></i>
