@@ -6,7 +6,6 @@ import Turntable2 from "./Turntable2";
 const Player = lazy(() => import("./Player/Player"));
 import Menu from "./Menu";
 import { usePlayerStore } from "../../store/playerStore";
-import SplitType from "split-type";
 
 const WordsPlayer = () => {
   const listOn = usePlayerStore((state) => state.listOn);
@@ -54,7 +53,7 @@ const WordsPlayer = () => {
         start: "top 10%",
         end: "bottom 100%",
         scrub: 1,
-        // markers: true,
+        markers: true,
         invalidateOnRefresh: true,
         // toggleActions: "restart reverse resume reset",
       },
