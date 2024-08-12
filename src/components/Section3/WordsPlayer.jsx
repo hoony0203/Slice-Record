@@ -53,7 +53,7 @@ const WordsPlayer = () => {
         start: "top 10%",
         end: "bottom 100%",
         scrub: 1,
-        markers: true,
+        // markers: true,
         invalidateOnRefresh: true,
         // toggleActions: "restart reverse resume reset",
       },

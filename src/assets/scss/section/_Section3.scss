@@ -277,6 +277,14 @@
   grid-template-rows: repeat(6, 1fr);
   justify-items: center;
   row-gap: 3rem;
+  &::-webkit-scrollbar {
+    background-color: var(--cl-text-light-sub);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: -webkit-radial-gradient(#db9561, #c55702);
+    background: radial-gradient(#db9561, #c55702);
+  }
 }
 
 @keyframes wobble-hor-bottom {
