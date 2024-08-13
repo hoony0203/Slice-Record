@@ -12,7 +12,7 @@ const Section6 = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from(no1Ref.current, {
+    gsap.set(no1Ref.current, {
       opacity: 0,
     });
     gsap.to(no1Ref.current, {
