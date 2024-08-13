@@ -28,7 +28,6 @@ export const useArtistStore = create((set, get) => {
         let firstSplice;
         const usualCount = 12;
         if (loadCount == 0) {
-          console.log("artist1");
           firstSplice = arrayCopy.splice(0, usualCount);
           let copy = [...firstSplice];
           set({
@@ -36,7 +35,6 @@ export const useArtistStore = create((set, get) => {
             artistList: copy,
           });
         } else if (loadCount >= 1 && arrayCopy.length >= 12) {
-          console.log("artist2");
           let pageArray = arrayCopy.splice(0, usualCount);
           let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
           set({
@@ -44,7 +42,6 @@ export const useArtistStore = create((set, get) => {
             artistList: newCopy,
           });
         } else if (loadCount >= 1 && arrayCopy.length < 12) {
-          console.log("artist3");
           let pageArray = arrayCopy.splice(0, arrayCopy.length);
           let newCopy = [...useArtistStore.getState().artistList, ...pageArray];
           set({

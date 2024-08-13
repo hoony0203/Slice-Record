@@ -6,10 +6,5 @@ export const useIntroduceStore = create((set, get) => {
   return {
     stack: stack,
     skills: skills,
-    actions: {
-      setplayerMode: (videoId) => {
-        set({ playerMode: true, playVideoId: videoId });
-      },
-    },
   };
 });

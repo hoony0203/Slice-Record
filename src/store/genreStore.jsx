@@ -42,7 +42,6 @@ export const useGenreStore = create((set, get) => {
             genreArtistList: firstSplice,
           });
         } else if (genreCount >= 1 && remain.length >= 12) {
-          console.log("genreArtist3");
           let pageArray = remain.splice(0, usualCount);
           let newCopy = [
             ...useGenreStore.getState().genreArtistList,
