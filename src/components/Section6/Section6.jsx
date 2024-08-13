@@ -63,7 +63,7 @@ const Section6 = () => {
         {artistInfo.map((artist, i) => {
           return (
             <div
-              ref={(el) => (imgRef.current[i] = el)}
+              ref={(el) => imgRef.current.push(el)}
               className="img-item s6"
               key={i}>
               <a

@@ -195,6 +195,12 @@
     text-overflow: ellipsis;
     word-break: break-word;
   }
+  i {
+    position: absolute;
+    left: 15rem;
+    top: 3rem;
+    color: yellow;
+  }
 }
 
 .playerMode {

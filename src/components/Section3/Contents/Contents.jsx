@@ -8,6 +8,7 @@ import GenreArtists from "./Genre/GenreArtists";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import DefaultImg from "./DefaultImg";
+import Favorite from "./Favorite/Favorite";
 
 const Contents = () => {
   const [menu, page, pageName] = useMenuStore(
@@ -63,6 +64,15 @@ const Contents = () => {
               <div ref={target2}></div>
             </>
           )}
+        </>
+      ) : menu[page - 1] == "favorite" ? (
+        <>
+          {
+            <>
+              <Favorite />
+              <div></div>
+            </>
+          }
         </>
       ) : (
         <>
