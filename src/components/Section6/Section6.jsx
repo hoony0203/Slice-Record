@@ -64,7 +64,7 @@ const Section6 = () => {
           return (
             <div
               ref={(el) => (imgRef.current[i] = el)}
-              className="img-item"
+              className="img-item s6"
               key={i}>
               <a
                 href={`https://www.youtube.com/channel/${artist.channelId}`}
