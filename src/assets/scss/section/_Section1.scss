@@ -1,4 +1,5 @@
 .section-1 {
+  position: relative;
   background-color: #222222;
   background: repeating-linear-gradient(
       45deg,
@@ -12,6 +13,7 @@
   padding-bottom: 15.5rem;
   @extend %section-size;
   .title {
+    position: absolute;
     max-width: 55rem;
   }
   .main-name {
@@ -37,51 +39,63 @@
   }
 }
 
-.record-wrap {
-  z-index: 3;
-}
-
 .record {
   float: right;
   position: sticky;
-  z-index: 4;
+  z-index: 1;
   top: 20vh;
   left: 50vw;
-  width: 800px;
-  height: 800px;
+  width: 700px;
+  height: 700px;
   img {
     height: 100%;
   }
 }
 
-@media screen and (max-width: 1520px) {
+@media screen and (min-width: 1600px) {
+  .record {
+    width: 800px;
+    height: 800px;
+  }
+}
+@media screen and (max-width: 1440px) {
   .section-1 {
-    padding-top: 8rem;
-    padding-bottom: 10rem;
     .title {
-      grid-column: unset;
-      font-size: 12vh;
+      max-width: 100%;
+      right: 20vw;
+      height: 90%;
+      bottom: 1vh;
     }
     .main-name {
-      margin-left: 1rem;
-      margin-bottom: 5rem;
+      margin-left: unset;
     }
     .sub-name {
       margin-left: 7rem;
+    }
+  }
+}
+@media screen and (max-width: 1280px) {
+  .section-1 {
+    .title {
+      max-width: 100%;
+      right: 2vw;
+      height: 90%;
+      bottom: 1vh;
+    }
+    .main-name {
+      margin-left: unset;
+    }
+    .sub-name {
+      margin-top: 55vh;
+      margin-left: 27rem;
       font-size: 4rem;
       line-height: 4rem;
     }
+    .sub-name-2 {
+      font-size: 3rem;
+    }
   }
-
-  .turntable1 {
-    bottom: 47.9%;
-    height: inherit;
-    width: 100%;
-  }
-
   .record {
-    top: 300px;
-    left: 700px;
     width: 600px;
     height: 600px;
   }
@@ -89,42 +103,62 @@
 @media screen and (max-width: 1024px) {
   .section-1 {
     .title {
-      grid-column: unset;
-      font-size: 19vh;
+      max-width: 100%;
+      right: 2vw;
+      height: 90%;
+      bottom: 1vh;
     }
     .main-name {
-      margin-left: 1rem;
-      margin-bottom: 5rem;
+      margin-left: unset;
     }
     .sub-name {
-      margin-left: 7rem;
+      margin-top: 55vh;
+      margin-left: 27rem;
       font-size: 4rem;
       line-height: 4rem;
     }
     .sub-name-2 {
       font-size: 3rem;
     }
-    .point-orange {
-      margin-bottom: 2rem;
-    }
-  }
-  .turntable1 {
-    bottom: 44.9%;
-    height: inherit;
-    width: 100%;
   }
   .record {
-    top: 600px;
-    left: 550px;
     width: 500px;
     height: 500px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .section-1 {
     .title {
-      grid-column: unset;
-      font-size: 10vh;
+      margin: 0 auto;
+      max-width: 100%;
+      right: 1vw;
+      height: 70%;
+      bottom: 20vh;
+    }
+    .main-name {
+      margin-left: unset;
+    }
+    .sub-name {
+      margin-top: 40vh;
+      margin-left: 19rem;
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+    .sub-name-2 {
+      font-size: 3rem;
     }
   }
+  .record {
+    width: 400px;
+    height: 400px;
+  }
 }
+
+// @media screen and (max-width: 768px) {
+//   .section-1 {
+//     .title {
+//       grid-column: unset;
+//       font-size: 10vh;
+//     }
+//   }
+// }

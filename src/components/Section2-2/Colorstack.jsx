@@ -1,4 +1,3 @@
-import React from "react";
 import { stack } from "../../data/stackSkills";
 
 const Colorstack = () => {

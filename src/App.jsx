@@ -5,11 +5,6 @@ const Section2 = lazy(() => import("./components/Section2/Section2"));
 const Introduce = lazy(() => import("./components/Section2-2/Introduce"));
 const WordsPlayer = lazy(() => import("./components/Section3/WordsPlayer"));
 const Section6 = lazy(() => import("./components/Section6/Section6"));
-// import Section1 from "./components/Section1/Section1";
-// import Section2 from "./components/Section2/Section2";
-// import Introduce from "./components/Section2-2/Introduce";
-// import WordsPlayer from "./components/Section3/WordsPlayer";
-// import Section6 from "./components/Section6/Section6";
 
 import lenis from "./util/lenis";
 import { useRef } from "react";

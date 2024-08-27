@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   border: 1px solid var(--cl-dark-bg);
-  width: 50%;
+  width: 70rem;
   height: 90%;
 }
 
@@ -42,11 +42,12 @@
 }
 
 @mixin colors($border-color, $color) {
+  position: relative;
   border: 3px solid $border-color;
   box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  width: 400px;
-  height: 400px;
+  width: 90%;
+  height: 90%;
   color: $color;
   transform: perspective(600px) rotateX(0deg);
   transition: all 0.7s ease;
@@ -55,7 +56,6 @@
 
 @mixin front($bg-color) {
   height: 100%;
-  position: relative;
   background-color: $bg-color;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -71,9 +71,10 @@
 }
 
 @mixin back($bg-color) {
-  position: relative;
+  position: absolute;
+  width: 100%;
   height: 100%;
-  bottom: 25rem;
+  top: 0.02rem;
   background-color: $bg-color;
   transform: rotateX(180deg);
   -webkit-backface-visibility: hidden;
@@ -122,8 +123,6 @@
 }
 
 .card-wrap {
-  width: 90%;
-  height: 90%;
   &:hover .grayish-orange {
     @include card-hover(var(--cl-main-bg));
   }
@@ -155,7 +154,6 @@
   grid-row: 2/3;
   grid-column: 2/3;
   flex-direction: column;
-  justify-content: center;
   h2 {
     @extend %font-stack-h2;
   }
@@ -165,11 +163,13 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 70px;
-  height: 70px;
+
+  width: 20%;
+  height: 20%;
   img {
-    // margin-left: 1rem;
+    width: 80%;
   }
+
   label {
     @extend %labels;
     margin-left: 7rem;
@@ -368,16 +368,83 @@
     background: linear-gradient(to right, #0abfbc, #fc354c);
   }
 }
-@media screen and (max-width: 800px) {
-  .grayish-orange {
-    .back {
-      bottom: 28.6rem;
+
+@media screen and (max-width: 1280px) {
+  .horizon-item {
+    width: 70rem;
+    height: 80%;
+  }
+
+  .color-stack {
+    padding: 1.2rem;
+    grid-template-columns: 400px 400px;
+    grid-template-rows: 400px 400px;
+  }
+
+  .stack-item {
+    width: 20%;
+    height: 20%;
+    img {
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .horizon-item {
+    width: 60rem;
+    height: 70%;
+  }
+
+  .color-stack {
+    padding: 1.2rem;
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 350px 350px;
+  }
+  .grayish-orange,
+  .red-Tangelo {
+    width: 90%;
+    height: 90%;
+    .front {
+      label {
+        font-size: 1.5rem;
+      }
     }
   }
 
+  .stack-item {
+    width: 20%;
+    height: 20%;
+    img {
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .horizon-item {
+    width: 50rem;
+  }
+
+  .color-stack {
+    padding: 0.5rem;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+  }
+  .grayish-orange,
   .red-Tangelo {
-    .back {
-      bottom: 28.6rem;
+    width: 90%;
+    height: 90%;
+    .front {
+      label {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .stack-item {
+    width: 20%;
+    height: 20%;
+    img {
+      width: 80%;
     }
   }
 }

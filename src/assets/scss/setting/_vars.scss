@@ -19,8 +19,16 @@
   --cl-text-light: #dbcab6;
   --cl-text-light-sub: #dbcab6cc;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1280px) {
     font-size: 14px;
     line-height: 1.4;
+  }
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  @media (max-width: 800px) {
+    font-size: 10px;
+    line-height: 1.1;
   }
 }

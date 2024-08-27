@@ -5,7 +5,7 @@ const Section1 = () => {
     <>
       <section className="section-1">
         <div className="container grid">
-          <h1 className="title txt-black txt-up">
+          <div className="title txt-black txt-up">
             <p className="main-name">Grayish Orange</p>
             <div className="sub-name">
               <p className="sub">Customized </p>
@@ -20,7 +20,7 @@ const Section1 = () => {
                 </p>
               </div>
             </div>
-          </h1>
+          </div>
         </div>
       </section>
     </>
