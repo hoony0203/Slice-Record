@@ -4,6 +4,7 @@
   padding-top: 20rem;
   padding-bottom: 40rem;
   margin: 20px 0px 0px 200px;
+  @extend %section-size;
   h2 {
     width: 100%;
     height: 20rem;

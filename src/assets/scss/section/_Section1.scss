@@ -10,6 +10,7 @@
     0 / 15px 15px;
   padding-top: 15.5rem;
   padding-bottom: 15.5rem;
+  @extend %section-size;
   .title {
     max-width: 55rem;
   }
@@ -36,20 +37,16 @@
   }
 }
 
-.turntable1 {
-  // border: 5px solid red;
+.record-wrap {
   z-index: 3;
-  position: absolute;
-  bottom: 1700px;
-  height: 2400px;
-  width: 1800px;
 }
 
 .record {
+  float: right;
   position: sticky;
   z-index: 4;
-  top: 200px;
-  left: 1000px;
+  top: 20vh;
+  left: 50vw;
   width: 800px;
   height: 800px;
   img {

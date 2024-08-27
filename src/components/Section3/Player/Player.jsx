@@ -40,8 +40,8 @@ const Section3 = () => {
 
   return (
     <>
-      <section className={`section-4 ${opacity}`}>
-        <div className="section-4-title">
+      <section className={`player ${opacity}`}>
+        <div className="player-title">
           <button className="backBtn" onClick={resetVideoList}>
             <i className="fa-solid fa-backward-step fa-2x"></i>
             <label>back</label>

@@ -22,6 +22,7 @@ const Contents = () => {
   const listRef = useRef(null);
   const [target, inView] = useInView();
   const [target2, inView2] = useInView();
+  const [isList, setIsList] = useState("");
 
   useEffect(() => {
     if (selectedGenre != "") {
@@ -41,8 +42,20 @@ const Contents = () => {
     }
   }, [inView2]);
 
+  useEffect(() => {
+    if (artistList.length == 0 || genreName.length == 0) {
+      setIsList("");
+    }
+    if (artistList.length > 0 || genreName.length > 0) {
+      setIsList("isList");
+    }
+  });
+
   return (
-    <div data-lenis-prevent ref={listRef} className="content-select-list">
+    <div
+      data-lenis-prevent
+      ref={listRef}
+      className={`content-select-list ${isList}`}>
       {menu[page - 1] == "artist" ? (
         <>
           {artistList.length < 1 ? (

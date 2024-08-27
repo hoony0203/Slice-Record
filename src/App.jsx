@@ -26,7 +26,7 @@ const App = () => {
     lenis();
   });
 
-  const circle = useRef();
+  const circle = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
     const record = gsap.from(circle.current, {
@@ -93,13 +93,13 @@ const App = () => {
 
       <main>
         <div className="wrapper">
-          <Section1 />
-          <div className="turntable1">
+          <div className="record-wrap">
             <div ref={circle} className="record">
               <img src="./img/record2.png" alt="" />
             </div>
+            <Section1 />
+            <Section2 />
           </div>
-          <Section2 />
           <div ref={target2}></div>
 
           {introduce == true ? (

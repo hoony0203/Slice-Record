@@ -1,15 +1,16 @@
 .section2-2 {
-  height: 100%;
   display: flex;
   flex-wrap: nowrap;
+  @extend %section-size;
 }
 
 .horizon-item {
-  border: 1px solid var(--cl-dark-bg);
-  width: 1000px;
-  height: 25%;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  border: 1px solid var(--cl-dark-bg);
+  width: 50%;
+  height: 90%;
 }
 
 .color-stack {
@@ -18,6 +19,7 @@
   grid-template-columns: 450px 450px;
   grid-template-rows: 450px 450px;
   column-gap: 0;
+  align-content: space-evenly;
 }
 
 %labels {
