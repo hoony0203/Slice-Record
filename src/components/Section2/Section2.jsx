@@ -10,14 +10,14 @@ const Section2 = () => {
   return (
     <>
       <section className="section-2">
-        <h2 className="title txt-black txt-up flex .record-point">
+        <div className="title txt-black txt-up flex record-point">
           <div className="quote">
             <span>{value.quote}</span>
           </div>
           <div className="quote-artist">
             <span>{value.artist}</span>
           </div>
-        </h2>
+        </div>
       </section>
     </>
   );
